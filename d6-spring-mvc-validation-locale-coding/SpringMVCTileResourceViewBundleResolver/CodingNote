@@ -1,0 +1,26 @@
+Project Name: SpringMVCTileLcaleDropDownList
+Author: Jian Zhang
+Company: Devprobe.com
+Date: 06/19/2014
+Highlight:
+(1) Spring Taglib and Standard are not enough for logic process, object exist detect and list / Map collection process
+    Integrate Struts 1.1 Taglib into JSP 
+(2) Spring ModelAndView and Command object are not in Session and Request, Change Locale and Child Window refresh Parent Window
+    we should use session or request object to keep context data like locale change data
+(3) org.springframework.web.servlet.i18n.LocaleChangeInterceptor only listens link parameter <a href="?lang=en"></a>
+    IF application support 10+ languages, we should not use 10+ links.  We code the 
+    localeResolver.setLocale(request, response, (Locale) localeEditor.getValue())
+    in MultiActionController to dynamically accept $.ajax post request, it allows return null instead of ModelAndView real object
+    then we use javascript reload page after user select language drop down list.
+    In this controller we also save user current selected language into session and ensure selected language still shown in list
+    after javascript reload page.
+    
+(4) Spring Annotation Controller is bound to form such as 
+    @RequestMapping(value="/localChange", method = RequestMethod.GET)
+    When use $.ajax call this kind of controller , throw Exception
+    It must return object, forward or redirect explicit page but language change is in header page in tile
+    but body could be any page, we can not grap it
+    More importance is we need only change locale in session, do not forward or rediect page while change language
+(5)     
+    
+      

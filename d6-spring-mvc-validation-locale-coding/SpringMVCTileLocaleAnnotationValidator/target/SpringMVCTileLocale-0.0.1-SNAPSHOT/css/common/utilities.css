@@ -1,0 +1,711 @@
+ .error {
+	color: #ff0000;
+}
+
+.progress_dialog
+{
+	  position: absolute;
+	  top:20px;
+	  left:10px;
+	  background-color:RGB(249,249,249);
+	  display:none;
+	  
+}
+
+
+.roundc{
+border:2px solid #ff0000;
+border-radius:25px;
+background:#dddddd;
+width:300px;
+-moz-border-radius:25px; /* Firefox */
+-webkit-border-radius:25px; /* Chrome and Safari */
+-o-border-radius:25px; /* Opera */
+}
+ 
+.errorblock{
+	box-shadow: 10px 10px 5px #ccccc;
+	color: #000;
+	background-color: #ffEEEE;
+	border-radius:15px;
+	display:none;
+	border: 2px solid #ff0000;
+	padding:8px;
+	margin:16px;
+	-moz-border-radius:25px; /* Firefox */
+	-webkit-border-radius:25px; /* Chrome and Safari */
+	-o-border-radius:25px; /* Opera */
+}
+
+.messageblock{
+	box-shadow: 10px 10px 5px #ccccc;
+	color: #000;
+	background-color: RGB(198,255,198);
+	border-radius:15px;
+	display:none;
+	border: 2px solid #ff0000;
+	padding:8px;
+	margin:16px;
+	-moz-border-radius:25px; /* Firefox */
+	-webkit-border-radius:25px; /* Chrome and Safari */
+	-o-border-radius:25px; /* Opera */
+}
+
+.saveSuccess {
+	box-shadow: 10px 10px 5px #ccccc;
+	color: #000;
+	background-color: RGB(198,255,198);
+	border-radius:15px;
+	border: 2px solid #ff0000;
+	padding:8px;
+	margin:16px;
+	-moz-border-radius:25px; /* Firefox */
+	-webkit-border-radius:25px; /* Chrome and Safari */
+	-o-border-radius:25px; /* Opera */
+}
+.errorMsg {
+	font-weight:bold;
+	text-align:left ;
+	color:red; 
+	padding:3px; 
+}
+
+
+
+ fieldset {
+	
+      background-color: #f7f7f7;
+	  border:none;
+	  border-radius:2px;
+	  margin-bottom:12px;
+	  overflow:hidden;
+	  padding 0:10px;
+	  margin-top:15px;
+	  margin-left:10px;
+	  margin-right:10px;
+	  border-top: 1px solid rgb(180,180,180);
+	  border-right: 1px solid rgb(206,206,206) ;
+	  border-bottom: 1px solid rgb(206,206,206) ;
+	  border-left: 1px solid rgb(180,180,180);
+      
+  }
+  
+legend {
+	  background-color: rgb(97,175,217);/*rgb(1,146,252);*/
+	  border-top: 1px solid rgb(229,229,229);
+	  border-right: 1px solid rgb(77,77,77) ;
+	  border-bottom: 1px solid rgb(77,77,77) ;
+ 	  border-left: 1px solid rgb(229,229,229);
+  	  padding:4px 12px 4px 12px ;
+ 	  color:white;
+      font-size:13px;
+	 
+	/*text-shadow: #9FBEB9 1px 1px 1px;*/
+}
+fieldset p {
+    margin-left: 10px;
+    text-align:left;
+}
+
+fieldset img {
+    margin-left: 10px;
+    float:left;
+}
+fieldset a.noUnderline {
+	text-decoration:none;
+	margin-right:18px;
+	float:left;
+	margin-top:20px;
+	 
+}
+fieldset span.linkButton {
+	background-color:#0855F3;
+	border-bottom:1px solid:#d4d4d4;
+	border-top:1px solid:#d4d4d4;
+	border-radius:5px;
+	box-shadow:3px 3px 3px #ccc;
+	color:#fff;
+	font-size:12px;
+	
+	padding: 5px 5px 5px 5px;	
+	/*background-image: url('../../images/layoutImages/next_arrow.png');	 
+	background-repeat:no-repeat;*/
+	text-shadow: #9FBEB9 1px 1px 1px;
+}
+
+fieldset select {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : 888888;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 160px;
+float: left;
+margin-top: 10px;
+}
+
+fieldset select.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : 888888;
+border-style : solid;
+border-width : 1px;
+text-align: left;
+display: block;
+width: 45px;
+float: left;
+margin-top: 0px;
+} 
+
+fieldset img.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : 888888;
+border-style : solid;
+border-width : 1px;
+text-align: left;
+display: block;
+float: left;
+margin-left: 0px;
+margin-top: 10px;
+} 
+
+ 
+fieldset Input {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+/*width: 300px;*/
+float: left;
+margin-top: 10px;
+ 
+}
+
+fieldset Input.short {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 180px;
+float: left;
+margin-top: 10px;
+ 
+}
+
+
+.email {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 250px;
+align
+margin-top: 10px;
+}
+
+.checkbox {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block; 
+text-align:left;
+width:0px;
+margin-left: 240px;
+
+}
+
+fieldset Input.submit {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 130px;
+float: left;
+margin-top: 10px;
+margin-left: 200px;
+
+
+} 
+ 
+fieldset Input.large {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 300px;
+float: left;
+margin-top: 10px;
+}
+.noteClass {
+  	width:448px;
+  	height:200px;  	 
+  	border : #000000 solid 1px; 
+  	overflow:scroll-y;
+  } 
+  .adExpClass {
+  	width:320px;
+  	margin-left:20px;
+  	 
+  	height:80px;  	 
+  	border : lightgrey solid 1px; 
+  	color:blue;
+  	background-color:#f7f7f7;
+  	overflow:scroll-y;
+  }  
+  .smallNoteClass {
+  	width:280px;
+  	height:20px;  	 
+  	border : #000000 solid 1px; 
+  	overflow:scroll-y;
+  } 
+  .noteWidthClass {
+  	width:740px;
+  	height:200px;
+  	margin-bottom:10px;
+  	border : #000000 solid 1px; 
+  	overflow:scroll-y;
+  	
+  } 
+.EmailList {
+  	width:740px;
+  	height:450px;
+  	border : #000000 solid 1px; 
+  	overflow:scroll-y;
+  }   
+fieldset select.small {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 120px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+fieldset select.middle {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 160px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+fieldset select.large {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 200px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+fieldset Input.small {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+display: block;
+width: 60px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+
+ 
+ 
+fieldset input.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+text-align: center;
+display: block;
+width: 40px;
+float: left;
+margin-top: 0px;
+} 
+
+fieldset input.radio {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+text-align: right;
+display: block;
+width: 0px;
+margin-left:170px;
+
+} 
+
+fieldset input.phone1 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+text-align: left;
+display: block;
+width: 35px;
+float: left;
+margin-left: 0px;
+margin-top: 10px;
+} 
+fieldset input.phone2 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+text-align: left;
+display: block;
+width: 35px;
+float: left;
+margin-left: 10px;
+margin-top: 10px;
+} 
+
+fieldset input.phone3 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border : #000000 solid 1px; 
+text-align: left;
+display: block;
+width: 40px;
+float: left;
+margin-left: 10px;
+margin-top: 10px;
+} 
+
+fieldset label{
+	font-weight : regular; 
+	width: 160px;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: right;
+	float: left;
+	padding-right: 10px;
+	display: block;
+	margin-top: 10px;
+	padding-right: 15px;
+	color:black;
+ 
+ }
+
+ 
+
+fieldset label.small{
+width: 100px;
+font-family: Arial;
+font-size: 12px;
+text-align: left;
+float: left;
+display: block;
+margin-top: 10px;
+margin-left: 0px;
+ }
+ /**
+   CompareLoadXXXXX
+   Dedicated for CompareRefinanceLoan and ComparePurchaseLoan
+   Other code can not be used
+  */
+.compareLoanData {
+	margin-top:12px;
+	width:100px; 
+	margin-right:10px;
+	border:1px solid;
+}
+
+.compareLoanLabel {
+	width: 160px; 
+	text-align:right;
+}
+ 
+ 
+ 
+.compareLoanTitle1 {
+	width: 130px; 
+	text-align:right;
+}
+.compareLoanTitle2 {
+	width: 100px; 	 
+	text-align:right;
+}
+.compareLoanTitle3 {
+	width: 100px; 
+	text-align:right;
+}
+/**
+ *reviewQuoteXXX
+  Dedicate for Replay Quote by Agent
+ */ 
+ .reviewQuoteLabel {
+	width: 160px; 
+	text-align:right;
+}
+.reviewQuoteTitle1 {
+	width: 140px; 
+	text-align:right;
+}
+.reviewQuoteTitle2 {
+	width: 100px; 
+	text-align:right;
+}
+.reviewQuoteTitle3 {
+	width: 100px; 
+	text-align:right;
+}
+.reviewQuoteTitle4 {
+	width: 100px; 
+	text-align:right;
+}
+
+.reviewQuoteThSmall {
+	width: 60px; 
+	text-align:left;
+}
+.reviewQuoteThLarge {
+	padding-top: -10px;
+	width: 100px; 
+	text-align:left;
+}
+.reviewQuoteThExLarge {
+	padding-top: -10px;
+	width: 170px; 
+	text-align:left;
+}
+.reviewQuoteLabel {
+	width: 80px; 
+	text-align:right;
+}
+.reviewQuoteData {
+	width: 100px; 
+	text-align:left;
+	margin-right:10px;
+}
+
+th {
+	 
+	text-align:left;
+	 
+}
+td {
+	padding-top:  5px;
+	text-align:left;
+	padding-bottom:  5px;
+}
+fieldset label.dollar{
+width: 5px;
+font-family: Arial;
+font-size: 10px;
+text-align: left;
+float: left;
+display: block;
+margin-top: 10px;
+margin-left: -10px;
+ }
+fieldset form:checkboxes.smallcb {
+width: 150px;
+font-family: Arial;
+font-size: 12px;
+text-align:left;
+float: left;
+display: block;
+margin-top: 10px;
+margin-right: 25px;
+}
+fieldset label.smalls{
+width: 55px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+display: block;
+margin-top: 10px;
+margin-left: 24px;
+ }
+ fieldset label.left{
+width: 220px;
+font-family: Arial;
+font-size: 12px;
+text-align: left;
+float: left;
+color: #0303FC;
+padding-right: 10px;
+display: block;
+margin-top: 0px;
+padding-right: 10px;
+ }
+fieldset label.alert{
+width: 220px;
+font-family: Arial;
+font-size: 12px;
+text-align: left;
+color: #FC030F;
+float: left;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+
+fieldset label.middle{
+width: 140px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+br {
+clear: left;
+}
+
+TEXTAREA {
+ont-weight : Normal;
+width: 400 px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+border: 1px solid #00000; 
+Font-color : 000000;
+display: block;
+float: left;
+margin-top: 10px;
+}
+
+ .body.body_box {
+    /* OUTER BACKGROUND COLOUR */
+    background-color: #7A93C9;
+     font-family: Arial,Helvetica,sans-serif;
+    font-size: 0.8em;
+}
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+ .AccountCreateTableCaption {
+ 	font-family: Arial;
+  	text-align: right;	 
+  		color: blue;
+    font-size: 0.9em;
+     padding-left:30px;  
+ }
+ .AccountCreateTableText {
+ 	font-family: Arial;
+  	text-align: left;	 
+  	border: 1px solid
+  		color: blue;
+    font-size: 0.9em;
+     padding-left:20px;  
+     padding-bottom:2px
+ } 
+  .AccountCreateTableHeader {
+ 	font-family: Arial;
+ 	font-weight: regular;
+  	text-align: left;	 
+  	color: white;
+    font-size: 14px;
+ }
+ 
+ .AccountCreateTableAreaTitle {
+ 	font-family: Arial;
+  	text-align: left;	 
+  	border: 1px solid
+  		color: blue;
+    font-size: 12px;
+     padding-left:30px;  
+ } 
+  .AccountCreateTableArea {
+ 	font-family: Arial;
+  	text-align:left;	 
+  	border: 1px solid
+  		color: blue;  		
+    font-size: 0.8em;
+     padding-left:5px;  
+ } 
+ 
+ table.external_box {
+	height:600px; 
+	width:900px;
+	border:1px #7eafd2 solid; 
+	background-image: url('../../images/layoutImages/verticalBlueToWhile.png'); 
+	background-repeat:repeat-x; 
+	
+}
+
+.caption_box {
+	padding:10px 10px 10px 10px; 
+	font-family:Arial; 
+	font-size:15pt; 
+	font-weight:bold; 
+	vertical-align:middle;
+    background-color: #98ccf0; 
+    border:1px #7eafd2 solid;
+}
+
+ table.internal_box {
+   border: solid 1px #7eafd2;
+   color:#505050;
+   font-family:Arial;
+   font-size:10pt; 
+   text-align:left; 
+   padding: 20px 20px 20px 20px;
+}
+
+table.internal_table {
+   border: solid 1px #7eafd2;
+   color:#505050;
+   font-family:Arial;
+   font-size:10pt; 
+   text-align:left; 
+   padding: 5px 5px 5px 5px;
+}
+
+ .myCheckbox {
+      width:20px;
+      morgin-right:0px;
+   }
+  

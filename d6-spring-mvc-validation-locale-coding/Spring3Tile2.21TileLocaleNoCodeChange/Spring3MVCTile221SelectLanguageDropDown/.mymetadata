@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Spring3MVCTile221SelectLanguageDropDown"
+  id="myeclipse.1403040570813"
+  context-root="/Spring3Tile221LanguageDropDown"
+  j2ee-spec="6.0"
+  archive="Spring3MVCTile221SelectLanguageDropDown.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

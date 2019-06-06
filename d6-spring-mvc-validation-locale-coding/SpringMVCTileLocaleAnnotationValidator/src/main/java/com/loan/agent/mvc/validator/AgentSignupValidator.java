@@ -11,7 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.loan.agent.mvc.formbean.AgentTable;
+import com.loan.agent.mvc.formbean.AgentForm;
 import com.locale.message.utils.ValidateHelp;
 
 /**
@@ -46,7 +46,7 @@ public class AgentSignupValidator extends ValidateHelp implements Validator {
 	@Override 
 	public boolean supports(Class givenClass)
 	{
-	      return givenClass.equals(AgentTable.class);
+	      return givenClass.equals(AgentForm.class);
 	}
     
 	/**

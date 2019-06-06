@@ -1,0 +1,679 @@
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 0.8em;
+	
+}
+.body_text {
+	color: 000000;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 10px;
+}
+
+.header {
+    width: 730px;
+    height: 153px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;	 
+	margin: 0 auto 0 auto;
+}
+
+.header h1 {
+    margin: 0px;
+    background: url('../images/sweet_home2.png') top left no-repeat;
+	width: 730px;
+    height: 153px;
+}
+
+.T1 {
+    margin: 0px;
+	padding-top:0px;
+	display: block;
+    margin: 0 auto 0 auto;
+    background: url('../images/sweet_home2.png') top left no-repeat;
+	width: 730px;
+    height: 153px;
+}
+.T1 h1 {
+   text-align: center;
+   font-weight: bold;
+   padding-top:11px;
+   color: #EC7154;
+   font-family: Georgia;
+   font-style: italic;
+	font-size: 22px;
+    margin: 0 auto 0 auto;
+}
+
+ 
+.T1 h6 {
+   text-align: left;
+   font-weight: bold;
+   padding-left:476px;
+   padding-top:7px;
+   color: #0B084D;
+   font-family: Georgia;
+   font-style: italic;
+	font-size: 12px;
+    margin: 0 auto 0 auto;
+}
+.T1 p {
+   text-align: left;
+   font-weight: bold;
+   padding-left:476px;    
+   color: #0B084D;
+   font-family: Georgia;
+   font-style: italic;
+	font-size: 12px;
+    margin: 0 auto 0 auto;
+}
+.T1 h5 {
+   text-align: left;
+   font-weight: bold;
+   padding-left:476px;    
+   color: #F41E0D;
+   font-family: Georgia;
+   font-style: italic;
+	font-size: 12px;
+    margin: 0 auto 0 auto;
+}
+
+ iframe {
+border: 0px solid #ffffff;
+}
+
+.rowshade {
+   background: #E9E6EC;
+  }
+.rowwhite {
+   background: #ffffff;
+  }
+.content table tr[class="rowshade"]:hover {
+    background-color: #F6F440;
+}
+
+.content table tr[class="rowwhite"]:hover {
+    background-color: #F6F440;
+}
+
+ fieldset {
+	  Font-color : #000000
+      border : 1 px solid #000000;
+	  padding: 1em;
+	  width:600px; /* or a percentage, or whatever */
+	  margin-bottom: 10px;
+	  margin-left: 30px;
+      text-align:center;
+      
+  }
+
+fieldset p {
+    margin-left: 10px;
+    text-align:left;
+}
+fieldset select {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 155px;
+float: left;
+margin-top: 10px;
+}
+
+fieldset select.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: center;
+display: block;
+width: 45px;
+float: left;
+margin-top: 0px;
+} 
+
+fieldset img.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: center;
+display: block;
+float: left;
+margin-left: 0px;
+margin-top: 10px;
+} 
+
+ 
+fieldset Input {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 150px;
+float: left;
+margin-top: 10px;
+}
+
+fieldset Input.submit {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 130px;
+float: left;
+margin-top: 10px;
+margin-left: 200px;
+
+
+} 
+ 
+fieldset Input.large {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 300px;
+float: left;
+margin-top: 10px;
+}
+
+fieldset select.small {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 63px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+fieldset select.smallMultiple {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 63px;
+height:250px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+
+
+fieldset Input.small {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+display: block;
+width: 60px;
+float: left;
+margin-top: 10px;
+margin-right:30px;
+}
+
+ 
+ 
+fieldset input.calendarDateInput {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: center;
+display: block;
+width: 40px;
+float: left;
+margin-top: 0px;
+} 
+
+fieldset input.phone1 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: left;
+display: block;
+width: 35px;
+float: left;
+margin-left: 0px;
+margin-top: 10px;
+} 
+fieldset input.phone2 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: left;
+display: block;
+width: 35px;
+float: left;
+margin-left: 10px;
+margin-top: 10px;
+} 
+
+fieldset input.phone3 {
+font-weight : Normal;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+Font-color : 000000;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+text-align: left;
+display: block;
+width: 40px;
+float: left;
+margin-left: 10px;
+margin-top: 10px;
+} 
+
+fieldset label{
+width: 180px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+
+fieldset label.small{
+width: 50px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+display: block;
+margin-top: 10px;
+margin-right: 25px;
+ }
+
+fieldset label.smalls{
+width: 55px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+display: block;
+margin-top: 10px;
+margin-left: 24px;
+ }
+ fieldset label.left{
+width: 220px;
+font-family: Arial;
+font-size: 12px;
+text-align: left;
+float: left;
+color: #0303FC;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+fieldset label.alert{
+width: 220px;
+font-family: Arial;
+font-size: 12px;
+text-align: left;
+color: #FC030F;
+float: left;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+
+fieldset label.middle{
+width: 140px;
+font-family: Arial;
+font-size: 12px;
+text-align: right;
+float: left;
+padding-right: 10px;
+display: block;
+margin-top: 10px;
+padding-right: 15px;
+ }
+br {
+clear: left;
+}
+
+TEXTAREA {
+ont-weight : Normal;
+width: 600 px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+border-color : black;
+border-style : solid;
+border-width : 1px;
+Font-color : 000000;
+display: block;
+float: left;
+margin-top: 10px;
+}
+.style2 {font-size: 16; font-family: Arial;}
+.style4 {	font-family: Tahoma;	font-size: 34px;	color: #CC0000;}
+.style8 {font-family: Arial, Helvetica, sans-serif; color:#333333;}
+
+.style9 {color: #FFFFFF}input.box {background-color:#FFFFCC;border: 1pt solid #707070;border-collapse: collapse;border-spacing: 0;font-size: 10pt;height: 18pt;margin-top: 2px;padding: 0;space: 0;z-index: 1;}
+.style15 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.style16 {font-family: Arial; font-size: 12px;}
+.style18 {font-size: 13px; font-family: Arial;}
+.style13 {font-family: Georgia; font-size: 13px; color:#E8300C }
+.style20 {
+	font-size: 12px;
+	font-family: Georgia;
+	color:#000000
+}
+.style25 {
+	font-size: 13px;
+	font-family: Georgia;
+	font-weight: bold;
+	color:#000000
+}
+.style21 {
+	font-size: 12px;
+	font-family: Georgia;
+	font-weight: bold;
+	font-style: italic;
+	color:#F30B5D
+
+}
+.style27 {
+	font-size: 14px;
+	font-family: arial;
+	font-weight: bold;
+	color:blue;
+}
+.style29 {
+	font-size: 14px;
+	font-family: Georgia;
+	font-style: italic;
+	color:#000000
+}
+
+.style28 {
+	font-size: 14px;
+	font-family: Georgia;
+	font-weight: bold;
+	color:blue;
+}
+.style38 {
+	font-size: 18px;
+	color: #000000;
+}
+
+table.sample {
+	border-width: 1px;
+	border-spacing: 0px;
+	padding-left:12px;
+	padding: 0px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: white;
+}
+table.sample th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.sample td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+.header h1 a {
+    display: block;
+    text-indent: -5000px;
+    text-decoration: none;
+    width: 730px;
+    height: 234px;
+}
+
+.mainmenu {
+    width: 730px;     
+    height: 37px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    margin: 0 auto 0 auto;
+}
+
+.mainmenu ul {
+    cursor: default;
+    list-style-type: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainmenu li {
+    cursor: default;
+    list-style-type: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    line-height: 30px;
+}
+
+.mainmenu li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.content {
+    padding: 0px;
+    width: 720px; 
+  	background-color:lightblue;	
+	 
+    margin: 0 auto 0 auto;
+}
+.content span {
+    margin: 0px;
+	font-family: Times Roman;
+
+}
+.content p {
+   	font-family: Times Roman;
+}
+
+.content div.bc {
+     margin-left: 0px;
+	 background-color: lightblue;
+}
+
+.content div.left {
+     margin-left: 18px;
+	 
+}
+.content table {
+     margin-left: 0px;
+	 
+}
+.title{
+font-weight : bold; 
+font-family: Arial;
+font-size: 12px;
+color:blue;
+text-align: center;
+
+
+ }
+.content table.loancompare {
+   border-width: 1px;
+	border-spacing: 0px;
+	padding-left:12px;
+	padding: 0px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: white;
+     margin-left: 12px;
+ 
+} 
+
+.content table.amertize {
+ 
+	 
+	background-color: white;
+
+     margin-left: 20px;
+ 
+}
+.content table.amertize_yearly {
+     margin-left: 85px;
+	 
+}
+.content table tr {
+    margin: 0px;
+	
+}
+.content table th {
+	 
+    margin: 0px;
+	
+}
+.content table td {
+    margin: 0px;
+	text-align: center;
+	
+}
+ 
+ 
+.content img {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+.content img.left {
+    float: left;
+    margin-left: 0px;
+	margin-top: 6px;
+    margin-bottom: 2px;
+    border: 0px;
+}
+
+.content img.center {
+    float: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+ 
+
+.content iframe {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+ 
+h1 {
+   font-size: 14px;
+	font-family: Georgia;
+	font-weight: bold;
+	color:blue;
+}
+
+h2 {
+   font-size: 14px;
+	font-family: Georgia;
+	font-weight: bold;
+	color:blue;
+}
+
+.minilinks {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.footer {
+   
+	padding-top:12px;
+    height: 120px;
+    border: 0px;
+	margin: 10px auto 10px auto;
+    text-align: center;	 
+    font-size: 0.8em;
+}
+
+.footer_bc {
+    width: 714px;
+    height: 60px;
+	padding-top:12px;
+    border: 0px;
+    text-align: center;	 
+	background-color: lightblue;
+    font-size: 0.8em;
+}
+
+div.images {
+    margin: 0 auto;
+    text-align:center;
+}
+
+div.images img {
+    float: none;
+    margin: 0px;
+}
