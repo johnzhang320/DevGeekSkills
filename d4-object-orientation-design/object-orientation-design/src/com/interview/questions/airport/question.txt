@@ -1,0 +1,18 @@
+Designed a airport according to the specs below: 
+
+Airport has multiple airplane runways. Each runway could be different width 
+Each airplane wing width could be different width
+Airplane must land or take off while it's wind width is less than runway width
+  
+Airplane can be BOEING 747, A380, BOEING 757, MD200 etc
+Runway could be Runway101,Runway230, Runway50 etc
+
+Data Structure and Algorithm:
+(1) Design Airplane name and wingwidth, and enum variable such as A380("A380", 130)
+(2) Design Flight with FlightNo , airplane , departure , arrive , passagers, enum such as CA450("CA450",Airplane.A380)
+    implement eaauls and Hashcode
+(3) Design Runway with RunwayNo, width, taken and Implements Comparable interface and int CompareTo(Object o) 
+(4) TreeSet<Runway> sorted it, iterator airplane wind width >= current runway width and taken == false, HashCode and Equal
+(5) Create Map<Flight, Runway>, 
+(6) Function, findOneRunway from tree set, add Flight and Runway to map, that's 
+ 

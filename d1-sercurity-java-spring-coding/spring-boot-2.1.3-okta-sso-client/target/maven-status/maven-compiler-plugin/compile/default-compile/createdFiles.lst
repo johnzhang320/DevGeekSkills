@@ -1,0 +1,6 @@
+com/loan/agent/mvc/controller/DashboardController.class
+com/loan/agent/mvc/config/BeanConfig.class
+com/loan/agent/mvc/model/User.class
+com/loan/agent/mvc/config/WebConfig.class
+com/loan/agent/mvc/ApplicationInitializer.class
+com/loan/agent/mvc/Application.class

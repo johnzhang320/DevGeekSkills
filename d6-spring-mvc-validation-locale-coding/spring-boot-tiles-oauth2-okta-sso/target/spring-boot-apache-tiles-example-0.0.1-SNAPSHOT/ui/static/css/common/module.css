@@ -1,0 +1,358 @@
+/* module CSS */
+/* Created by John Zhang
+ * Create Date: 05/07/2014
+ */
+
+/*
+ * containers
+ */
+
+ .mdcontainer {
+    position: relative;
+ 	width:1600px;
+  	overflow:auto;
+ 	background:#FFF;
+ 	border:1px solid rgb(180,180,180);
+ 	-moz-box-shadow:8px 8px 8px rgb(206,206,206);
+ 	-webkit-box-shadow:8px 8px 8px rgb(206,206,206);
+ 	box-shadow: 8px 8px 8px rgb(206,206,206);
+ 	border-radius:2px;  
+ 	-moz-border-radius:2px;
+ 	-webkit-border-radius:2px;
+  
+ 	padding 10px;
+ }
+
+.widecontainer {
+  	margin:20px auto;
+ 	width:1250px;   
+    overflow:auto;
+ 	background:#FFF;
+ 	border:1px solid rgb(180,180,180);
+ 	-moz-box-shadow:8px 8px 8px rgb(206,206,206);
+ 	-webkit-box-shadow:8px 8px 8px rgb(206,206,206);
+ 	box-shadow: 8px 8px 8px rgb(206,206,206);
+ 	border-radius:2px;  
+ 	-moz-border-radius:2px;
+ 	-webkit-border-radius:2px;
+ 	padding 10px;
+    
+ }
+
+ 
+
+ /*
+  *  modules
+  */
+ 
+.mdcontainer .module {
+ 	margin-left: auto ;
+	margin-right: auto ;
+	background:#FFF;
+	border:1px solid rgb(180,180,180);
+	-moz-box-shadow:8px 8px 8px rgb(206,206,206);
+	-webkit-box-shadow:8px 8px 8px rgb(206,206,206);
+	box-shadow: 2px 2px 2px rgb(206,206,206);
+	border-radius:2px;  
+ 	-moz-border-radius:2px;
+ 	-webkit-border-radius:2px;
+	margin:15px;
+
+}
+
+.widecontainer .module_main {    
+    width:1600px;
+    float: left;
+	background:#FFF;
+	border:1px solid rgb(180,180,180);
+	-moz-box-shadow:8px 8px 8px rgb(206,206,206);
+	-webkit-box-shadow:8px 8px 8px rgb(206,206,206);
+	box-shadow: 2px 2px 2px rgb(206,206,206);
+	border-radius:2px;  
+ 	-moz-border-radius:2px;
+ 	-webkit-border-radius:2px;
+	margin:15px;
+ }
+ .widecontainer .module_sidebar {   
+   
+    width: 400px; 
+    min-height:400px;
+    margin-left:830px; 	    
+	background:#FFF;
+	border:1px solid rgb(180,180,180);
+	-moz-box-shadow:8px 8px 8px rgb(206,206,206);
+	-webkit-box-shadow:8px 8px 8px rgb(206,206,206);
+	box-shadow: 2px 2px 2px rgb(206,206,206);
+	border-radius:2px;  
+ 	-moz-border-radius:2px;
+ 	-webkit-border-radius:2px;
+    clear:none;
+    margin-top:15px;
+	 
+ }
+ 
+.module_main .module-title ,
+.module_sidebar .module-title ,
+.module .module-title  {
+  	margin-left: auto ;
+ 	margin-right: auto ;
+	background-color: rgb(97,175,217); /*rgb(1,146,252);*/
+	border-top: 1px solid rgb(229,229,229);
+	border-right: 1px solid rgb(77,77,77) ;
+	border-bottom: 1px solid rgb(77,77,77) ;
+	border-left: 1px solid rgb(229,229,229);
+	padding:5px;
+	text-shadow:#9FBEB9 1px 1px 1px;
+ 	color:white;
+ 	font-size:16px;
+ 	font-weigth:bold;
+}
+
+
+.module_main .module-body,
+.module_sidebar .module-body,
+.module .module-body {
+    display: block;
+    background-color:white;
+    margin-top: -8px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+/*
+ * Module FieldSet Box
+*/
+
+.module_main fieldset,
+.module_sidebar fieldset,
+.module fieldset {
+	  background-color: #f7f7f7;
+	  border:none;
+	  border-radius:2px;
+	  margin-bottom:12px;
+	  overflow:hidden;
+	  padding 0:10px;
+	  margin-top:15px;
+	  margin-left:10px;
+	  margin-right:10px;
+	  border-top: 1px solid rgb(180,180,180);
+	  border-right: 1px solid rgb(206,206,206) ;
+	  border-bottom: 1px solid rgb(206,206,206) ;
+	  border-left: 1px solid rgb(180,180,180);
+}
+.module_main legend,
+.module_sidebar legend,
+.module legend {
+	  background-color: rgb(97,175,217);/*rgb(1,146,252);*/
+	  border-top: 1px solid rgb(229,229,229);
+	  border-right: 1px solid rgb(77,77,77) ;
+	  border-bottom: 1px solid rgb(77,77,77) ;
+ 	  border-left: 1px solid rgb(229,229,229);
+  	  padding:4px 12px 4px 12px ;
+
+ 	  color:white;
+      font-size:14px;
+}
+
+ 
+
+
+fieldset .center {
+       position:relative;
+       width:760px;
+  	   margin-left: auto ;
+ 	   margin-right: auto ;
+         
+ }
+
+/*
+ *  filedset form elements
+ */
+fieldset label{
+ 	width: 230px;    
+	font-family: Arial;
+	font-size: 12px;
+	text-align: right;
+	float: left;
+	padding-right: 10px;
+	display: block;
+	margin-top: 10px;
+	padding-right: 15px;
+}
+fieldset label.small{
+ 	width: 50px;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: right;
+	float: left;
+	display: block;
+	margin-top: 10px;
+	margin-right: 25px;
+ }
+
+ 
+ fieldset label.left{
+	width: 220px;
+ 	font-family: Arial;
+	font-size: 12px;
+	text-align: left;
+	float: left;
+	color: #0303FC;
+	padding-right: 10px;
+	display: block;
+	margin-top: 10px;
+	padding-right: 15px;
+ }
+ 
+br {
+clear: left;
+}
+ 
+ fieldset .noteClass {
+  	width:550px;
+  	height:100px;
+  	border : #000000 solid 1px; 
+  	overflow:scroll-y;
+    margin-left:40px;
+  }  
+   fieldset input[type="radio"],
+   fieldset input[type="checkbox"] {
+  	  width:20px;
+      morgin-right:0px;
+      border:hidden;
+  }  
+  
+fieldset label.noteTitle {
+ 	  
+	font-family: Arial;
+	font-size: 12px;
+	text-align: left;
+	float: left;
+	padding-right: 10px;
+	display: block;
+	margin-top: 10px;
+	padding-right: 15px;  
+    margin-left:40px;
+    
+  	 
+  } 
+fieldset input {
+ 	font-weight : Normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	Font-color : 000000;
+	border-color : black;
+	border-style : solid;
+	border-width : 1px;
+	display: block;
+	width: 150px;
+	float: left;
+	margin-top: 10px;    
+}
+
+
+fieldset input[type="file"] {
+    width: 380px;    
+    border-color : grey;
+}
+fieldset input[name="propertyZipCode"] {
+    width: 80px; 
+}
+
+fieldset .myCheckbox {
+      width:20px;
+      morgin-right:0px;
+      border:hidden;
+   }
+
+fieldset select {
+ 	font-weight : Normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	Font-color : 000000;
+	border-color : black;
+	border-style : solid;
+	border-width : 1px;
+	display: block;
+	width: 155px;
+	float: left;
+	margin-top: 10px;
+}
+
+
+  
+/*
+ *  module Table elements
+ */
+.module_main table,thead,tr,th,td ,
+.module_sidebar table,thead,tr,th,td ,
+.module-body table,thead,tr,th,td {
+	border:1px solid #CCC;
+	border-spacing: 0;
+	text-align:left;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+	margin-top:20px;
+	padding:5px;
+}
+
+/*
+ *  Module buttons which could exceed the fieldset
+ */
+
+.module-body .buttonImage {
+  color: white;
+  background-color: rgb(215,30,77);
+  border-top: 1px solid rgb(229,229,229);
+  border-right: 1px solid rgb(77,77,77) ;
+  border-bottom: 1px solid rgb(77,77,77) ;
+  border-left: 1px solid rgb(229,229,229);
+  -moz-box-shadow:3px 3px 3px rgb(229,73,0);
+  -webkit-box-shadow:3px 3px 3px rgb(147,73,0);
+ 	box-shadow: 3px 3px 3px rgb(145,145,145);
+  padding:4px 12px 4px 12px ;
+  border-radius:5px 5px 5px 5px;
+  -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius:5px 5px 5px 5px;
+  
+  margin:10px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.feature { 
+         float:left;
+         margin-left:10px;
+ }
+.feature h2{
+       width:260px;padding:15px;
+       background:rgb(97,175,217); 
+       color:#FFF;
+       font-size:24px;
+       line-height:30px;
+       font-weight:normal;
+       text-align:center;
+       -moz-border-radius-topleft: 20px;
+       -webkit-border-top-left-radius: 20px; 
+       border-top-left-radius: 20px;
+       -moz-border-radius-topright: 20px;
+       -webkit-border-top-right-radius: 20px;
+       border-top-right-radius: 20px;
+     }
+.feature p{
+         width:260px;
+         padding:15px; 
+         background:#DDD; 
+         color:#666; 
+         font-size:18px;
+         text-align:center;
+         line-height:16px;
+         -moz-border-radius-bottomright: 20px;
+         -webkit-border-bottom-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+         -moz-border-radius-bottomleft: 20px;
+         -webkit-border-bottom-left-radius: 20px;
+         border-bottom-left-radius: 20px;
+    }
+.clear{ clear:both;}

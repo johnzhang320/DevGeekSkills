@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<context:component-scan	base-package="com.loan.agent.mvc.controller" />	
+	<bean  class="com.loan.agent.mvc.validator.AgentSignupValidator" />
+   <!-- Register Tile Definition Configuration files -->     
+    <bean id="tilesConfigurer"
+    	class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    	<property name="definitions">
+           <list>
+    	      <value>/WEB-INF/tiles-spring.xml</value>
+    	   </list>
+    	</property>
+    </bean> 
+   
+    <!-- Tiles Configuration,viewClass name equals to Tile definition name , 
+         then no need ResourceBundleViewResolver file spring-view.properties-->
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" >
+    <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>       
+    </bean> 
+    
+    <!--  default locale is English and set defaultEncoding is UTF-8 -->
+    <bean id="localeResolver"  class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+            <property name="defaultLocale" value="en" />
+    </bean> 
+     
+    <!-- Register the message.properties -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="application" /> 
+    </bean>
+  
+  
+  
+  
+     
+    <bean id="InternalPathMethodNameResolver" 
+         class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+        <property name="suffix" value="Handler" />
+    </bean>
+    	
+  
+	
+</beans>
+

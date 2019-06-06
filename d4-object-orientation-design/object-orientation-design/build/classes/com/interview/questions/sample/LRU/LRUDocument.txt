@@ -1,0 +1,13 @@
+Problem 4: Desing and implement LRU cache in Java or C++?
+An LRU cache stands for Least Recently used. It should remove the least recently used item from cache to
+make space for a new item. Think about persistence strategy of cache. how do you build cache after crash etc
+
+Implementation LRU
+(1) Create double linked list, ensure always add new LRU object at head and track the end of list
+(2) Create map<key, LRUObject>, when add new object, check if map.size() > capacity or not
+(3) If adding LRUobject which exists in map, get object from map, delete it from double linked list. add it 
+    to head
+(4) if largest than capacity, delete end object from linked list and add new object to head of linked list
+
+
+ 

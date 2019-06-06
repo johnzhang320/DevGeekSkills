@@ -1,0 +1,11 @@
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/one/to/one/primary/test/OneToOnePrimaryDataQueryTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/join/table/many/to/many/test/JoinTableManyToManyDataInitializeTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/custom/type/test/CustomTypeDataInitializeTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/one/to/many/test/OneToManyDataQueryTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/custom/type/test/CustomTypeDataQueryTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/many/to/many/test/ManyToManyDataInitializeTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/join/table/many/to/many/test/JoinTableManyToManyDataQueryTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/many/to/many/test/ManyToManyDataQueryTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/one/to/many/test/OneToManyDataInitializeTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/one/to/many/test/CategoryDAOTest.java
+/Users/jianzhang/JZWorkspace/hiberateWS/hibernate5-abstract-sessionfactory/src/test/java/com/hibernate/one/to/one/primary/test/OneToOnePrimaryDataInitializeTest.java

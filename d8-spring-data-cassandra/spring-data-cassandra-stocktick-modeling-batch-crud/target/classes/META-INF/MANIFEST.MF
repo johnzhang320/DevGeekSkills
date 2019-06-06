@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-data-cassandra-stocktick-modeling-batch-c
+ rud
+Implementation-Version: 1.0.0
+Built-By: jianzhang
+Implementation-Vendor-Id: spring-data-cassandra-stocktick-modeling-bat
+ ch-crud
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://projects.spring.io/spring-boot/spring-data-
+ cassandra-stocktick-modeling-batch-crud/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

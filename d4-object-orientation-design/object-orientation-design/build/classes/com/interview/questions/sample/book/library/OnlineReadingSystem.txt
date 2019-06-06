@@ -1,0 +1,7 @@
+Design Online Reading System, search book, find book and read book from book library, user of library, 
+search book by partial name, book type, author, isbn number, list searched result to offer user finally choose
+
+
+(1) Design Book object, name, author, publish date, type, isbn, id, 
+(2) User object: name, id,accountType
+(3) Library, BookList<book> and UserList<User>, borrowInfoMap<book,user>

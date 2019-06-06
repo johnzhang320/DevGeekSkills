@@ -1,0 +1,12 @@
+ 
+I'm simulating an airport with one runway. There are 2 queues for planes 
+waiting to land and waiting to take off. There can only be one plane on 
+the runway at a time, and all planes in the air have to land before any
+planes take off. 
+LinkedBlockingQueue is core queue we must totally understand how to use it
+The major implementation difference between the two data structures 
+(synchronization-wise) is that because ArrayBlockingQueue keeps the elements 
+in an array it needs only one lock to keep everything synchronized. On the 
+other hand, LinkedBlockingQueue uses two locks, one for insertion and one 
+for extraction. That happens because while ArrayBlockingQueue contains just 
+an array, LinkedBlockingQueue contains a series of connected nodes, so it doesn’t need to keep track of insertion and extraction at the same time.

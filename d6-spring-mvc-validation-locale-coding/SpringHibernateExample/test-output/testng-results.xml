@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1660" started-at="2017-04-10T17:40:35Z" finished-at="2017-04-10T17:40:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1660" started-at="2017-04-10T17:40:35Z" finished-at="2017-04-10T17:40:37Z">
+      <class name="com.websystique.springmvc.controller.AppControllerTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="setUp" is-config="true" duration-ms="1348" started-at="2017-04-10T10:40:35Z" finished-at="2017-04-10T10:40:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="deleteEmployee()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="deleteEmployee" duration-ms="60" started-at="2017-04-10T10:40:36Z" finished-at="2017-04-10T10:40:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteEmployee -->
+        <test-method status="PASS" signature="editEmployee()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="editEmployee" duration-ms="77" started-at="2017-04-10T10:40:36Z" finished-at="2017-04-10T10:40:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editEmployee -->
+        <test-method status="PASS" signature="listEmployees()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="listEmployees" duration-ms="22" started-at="2017-04-10T10:40:36Z" finished-at="2017-04-10T10:40:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listEmployees -->
+        <test-method status="PASS" signature="newEmployee()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="newEmployee" duration-ms="8" started-at="2017-04-10T10:40:36Z" finished-at="2017-04-10T10:40:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newEmployee -->
+        <test-method status="PASS" signature="saveEmployeeWithSuccess()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="saveEmployeeWithSuccess" duration-ms="7" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveEmployeeWithSuccess -->
+        <test-method status="PASS" signature="saveEmployeeWithValidationError()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="saveEmployeeWithValidationError" duration-ms="4" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveEmployeeWithValidationError -->
+        <test-method status="PASS" signature="saveEmployeeWithValidationErrorNonUniqueSSN()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="saveEmployeeWithValidationErrorNonUniqueSSN" duration-ms="6" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveEmployeeWithValidationErrorNonUniqueSSN -->
+        <test-method status="PASS" signature="updateEmployeeWithSuccess()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="updateEmployeeWithSuccess" duration-ms="5" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateEmployeeWithSuccess -->
+        <test-method status="PASS" signature="updateEmployeeWithValidationError()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="updateEmployeeWithValidationError" duration-ms="2" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateEmployeeWithValidationError -->
+        <test-method status="PASS" signature="updateEmployeeWithValidationErrorNonUniqueSSN()[pri:0, instance:com.websystique.springmvc.controller.AppControllerTest@1d057a39]" name="updateEmployeeWithValidationErrorNonUniqueSSN" duration-ms="4" started-at="2017-04-10T10:40:37Z" finished-at="2017-04-10T10:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateEmployeeWithValidationErrorNonUniqueSSN -->
+      </class> <!-- com.websystique.springmvc.controller.AppControllerTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

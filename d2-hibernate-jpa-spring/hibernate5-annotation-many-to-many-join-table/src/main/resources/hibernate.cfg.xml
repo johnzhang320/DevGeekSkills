@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory >
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.password">mariadbpwd</property>
+        <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/dbrelations_hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.default_catalog">dbrelations_hibernate</property>
+        <property name="hibernate.default_schema">dbrelations_hibernate</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.autocommit">true</property>
+        <!--Critical and fatal parameter: hibernate.hbm2ddl.auto: create = drop and recreate table , update= update table, validate=create if not exists and keep existing table>-->
+        <property name="hibernate.hbm2ddl.auto">create</property>    
+        <property name="hibernate.current_session_context_class">thread</property>   <!-- Session Context for Hibernate 5+ -->
+      
+         <!-- Many To Many Table Mapping -->
+        <mapping class="com.hibernate.many.to.many.join.table.model.User"/>
+        <mapping class="com.hibernate.many.to.many.join.table.model.Group"/>
+        <mapping class="com.hibernate.many.to.many.join.table.model.UserGroup"/>
+        
+      
+    </session-factory>
+</hibernate-configuration>

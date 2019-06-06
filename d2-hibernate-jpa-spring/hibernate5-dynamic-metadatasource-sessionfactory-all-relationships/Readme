@@ -1,0 +1,22 @@
+Abstract SessionFactory
+  If first time run this project , please check run configuration and delete all items under Junit 
+1. keep static SessionFactory once it is created, ensure each instance has one sessionFactory and each session per each thread, 
+   it is in ThreadLocal 
+2. concrete dao service class (such as OneToManyServiceImpl) extends HibernateAbstractSessionFactory class and implements 
+   SessionFactoryService interface
+3. In concrete dao service class can initialize 
+   (1) hibernate.hbm2ddl.auto to 'create' for create table , 'validate or update' to update and query, as we know this is fatal 
+       critical for real project, never damage user data
+   (2) use Metadata getMetadataSources(ServiceRegistry serviceRegistry) abstract method to build sessionFactory, the annotation 
+       class can be defined by concrete class (see OneToManyServiceImpl), not defined mapping classes in this method, even 
+       corresponding tables is same database , they would not be impacted
+   (3) We also can use abstract method getPropertiesFile() to define our own properties file to describe your db url , user/password,
+       connection pool etc
+4. Create Test is using default create for hibernate.hbm2ddl.auto and query set validate, before run queryTest , must run 
+   initialtest
+5. Using Junit 5 to ensure execute test case by order, in BaseTestDAO.java ensure session transaction begin and commit per 
+   each @Test then close session, after all run close sessionFactory
+6. Because all @Test cases are arranged reasonably, therefore we can use MySQL or Mariadb to test and verify all test cases
+   without database conflict and data damage, so we can verify each real result in database side , unlike H2 data disappeared 
+   once test done!
+7. Table meanful columns got unique constraint, never duplicated inserted even we do not set hibernate.hbm2ddl.auto to 'create'

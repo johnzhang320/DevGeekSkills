@@ -1,0 +1,24 @@
+Designed a parking lot according to the specs below: 
+
+The parking lot has multiple slots.
+The parking lot can park motorcycles, cars, and buses.
+The parking lot has small slots, compact slots, and large slots.
+A motorcycle can park in any slot.
+A car can park in either a single compact slot or a single large slot.
+A bus can park only in a single large slot.
+
+Design Thinking:
+This is coverable problem
+if current is motorcycle, we check slot from small slots , compact, to large slot by order, each one available, take it
+if it is car check compact to large slot only
+if it is bus only check large slot
+
+Data structure: 
+create abstract class to be used in polymorphism map and list 
+(1) create abstract class slot with slot number and slot taken
+    create concrete classes smallslot, compactSlot, largeSlot
+(2) create vichicle abstract class and enum variable motorcycle, car and bus, create concrete class
+(3) Parking class function take a slot and unpacking the slot
+(4) Algorithm: each specific vechicle , we generate a random number(3 digits) when create it, use it as token
+    to park 
+We design abstract class vechicle in which user must implement method carType

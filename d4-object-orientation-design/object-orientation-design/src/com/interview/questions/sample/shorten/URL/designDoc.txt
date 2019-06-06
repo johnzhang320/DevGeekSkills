@@ -1,0 +1,19 @@
+
+Problem 2: Design a URL shortener service like goo.gl (solution)
+You need to design a URL shortener service like bit.ly or goo.gl. You can insert full URL and get a short one. 
+Your short URL should also record the stats about how many time it was accessed. Your system should also be 
+able to handle concurrent user and millions of URL shortening per day. Think about auditing and bookkeeping 
+as well. Btw, If you struggle to start with this questions then you can also see the Cracking the Coding Interview 
+book, which contains a whole chapter on Object Oriented design and how to approach such problems.
+ 
+Shorten URL procedure
+
+(1) once a request comes in, we create thread to process this request, 
+(2) If request to shorten URL, we create database, row is sequence from 10000, check if URL in database or not, if not find unique sequence ID from
+    database, here create new sequence ID and save URL associated with the ID, using concurrent hash map to avoid the synchronized problem
+(3) encode ID to heximal data as shorten URL to return to user, last two character as domain name
+(4) if user use shorten URL access. decode shortne url to Integer ID and fetch URL for it.
+
+
+Data Structure Design
+

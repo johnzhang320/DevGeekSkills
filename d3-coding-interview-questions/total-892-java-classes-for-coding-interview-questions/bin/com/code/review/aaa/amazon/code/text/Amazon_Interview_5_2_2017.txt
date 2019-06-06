@@ -1,0 +1,52 @@
+Goodreads is an book recommendation system based on social connections
+- A user can be associated with a collection of users they are friends with.
+- A user can be associated with a collection of their favorite books.
+- Given a user, find all books recommended by their extended network of friends.
+
+      +-----------------------------------------+     +-----------------------+
+  +-->|  class User                             |     |  class Book           |
+  |   |-----------------------------------------|     |-----------------------|
+  |   |  String getName();                      |     |  String getTitle();   |
+  +----+ Collection<User> getFriends();         |     |                       |
+      |  Collection<Book> getFavoriteBooks(); +------>|                       |
+      |                                         |     |                       |
+      +-----------------------------------------+     +-----------------------+
+
+
+
+  /-> B -> C -> D
+A --> E -> F
+  \-> G
+   \-> H
+      
+      
+public interface GoodReadsSolver {
+    Collection<Book> findRecommendations(User user);
+}
+
+public class GoodReadsSolverImpl implements GoodReadsSolver {
+    private orig_user =null;
+    Collection<Book> findRecommendations(User user) {
+         orig_user = user;
+         Collection<Book> totalsBooks = new LinkedList<Book>();
+         for (User friend : user.getFriends()) {            
+             for (Book book: friend.getFavoriteBooks() ) {
+                 totalsBooks.add(book);
+             }
+         }
+         return totalsBooks;
+    }
+    Collection<Book> findRecommendations(User user) {
+        Collection<Book> totalsBooks = new LinkedList<Book>();
+        help(user, totalsBooks); 
+        return totalsBooks;
+    }
+    void help(User user, Connection<Book> books) {
+           if (user.getFriends()==null) return;           
+           for (User friend : user.getFriends()) {   
+               books.addAll(friend.getFavoriteBooks());  
+               help(friend,books);
+           }
+           
+    }  
+}

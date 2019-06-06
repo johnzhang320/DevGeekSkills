@@ -1,0 +1,110 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<project xmlns = "http://maven.apache.org/POM/4.0.0" 
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>	
+	<groupId>com.oauth2.demo</groupId>
+	<artifactId>SpringbootOauth2JWT</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>SpringbootOauth2JWT</name>
+	<description>Spring Boot Oauth2 JWT Token</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>		
+		<dependency>
+		   <groupId>org.springframework.security.oauth</groupId>
+		   <artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.springframework.security</groupId>
+		   <artifactId>spring-security-jwt</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.mariadb.jdbc</groupId>
+		    <artifactId>mariadb-java-client</artifactId>
+		    <version>2.1.0</version>
+		</dependency>
+		 
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-test</artifactId>
+		   <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.springframework.security</groupId>
+		   <artifactId>spring-security-test</artifactId>
+		   <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.2.1.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator-annotation-processor</artifactId>
+		    <version>5.2.1.Final</version>
+		</dependency>
+	</dependencies>
+<!-- 
+	Spring Boot Starter Security − Implements the Spring Security
+	
+	Spring Security OAuth2 − Implements the OAUTH2 structure to enable the Authorization Server and Resource Server.
+	
+	Spring Security JWT − Generates the JWT Token for Web security
+	
+	Spring Boot Starter JDBC − Accesses the database to ensure the user is available or not.
+	
+	Spring Boot Starter Web − Writes HTTP endpoints.
+	
+	H2 Database − Stores the user information for authentication and authorization.
+ -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="Double" hibernate-type="BigDecimal"
+			length="12" scale="2" precision="2">
+		</sql-type>
+		<sql-type jdbc-type="Float" hibernate-type="BigDecimal"
+			length="6" scale="3" precision="3">
+		</sql-type>
+	</type-mapping>
+	<table name="t_quote" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Quote">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="t_agents" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Agents">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="t_users" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Users">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="t_compare" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Compare">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+	<table name="t_exists_loans" catalog="mortgage_agency"
+		class="com.loan.agent.dao.ExistLoans">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+	<table name="t_reply" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Reply">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="t_credit_cards" catalog="mortgage_agency"
+		class="com.loan.agent.dao.CreditCard">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="state" catalog="mortgage_agency"
+		class="com.loan.agent.dao.State">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="county" catalog="mortgage_agency"
+		class="com.loan.agent.dao.County">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="quote" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Quote">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="agents" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Agents">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="users" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Users">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="compare" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Compare">
+		<primary-key>
+			<generator class="foreign"></generator>
+		</primary-key>
+	</table>
+	<table name="reply" catalog="mortgage_agency"
+		class="com.loan.agent.dao.Reply">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+<table name="departments" catalog="hr" class="Departments">
+	<primary-key>
+		<generator class="identity"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

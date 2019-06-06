@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>640</y>
+      <w>280</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>_Circle_
+&lt;class&gt;
+--
+void draw() {
+   System.out.println("Drawing Circle");
+}
+void resize() {
+ .....
+ }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>330</y>
+      <w>250</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_shape_
+&lt;Interface&gt;
+--
+void draw();
+void resize();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>480</y>
+      <w>290</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>_Rectangle_
+&lt;class&gt;
+--
+void draw() {
+   System.out.println("Drawing Rectangle");
+}
+void resize() {
+ .....
+ }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>350</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_GeometricShape_
+&lt;Interface&gt;
+--
+ double area();
+ void drawShape();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>650</y>
+      <w>310</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>_Rhombus_
+&lt;class&gt;
+--
+ public double perimeter() {
+        return 2 * (a + b);
+    }
+ void drawShape() {
+	System.out.println("Drawing Rhombus");
+}   </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>470</y>
+      <w>310</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>_Triangle_
+&lt;class&gt;
+--
+ public double area() {
+  double s = (a + b + c) / 2;
+  return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+}
+void drawShape() {
+	System.out.println("Drawing Triangle");
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>90</x>
+      <y>50</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=white
+Adapter to adapt shape to adaptee 
+GeometricShape
+Adapter implement shape
+and use reference(composition)
+to GeometricShape</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>20</y>
+      <w>490</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>_GeometricShapeObjectAdapter_
+&lt;class&gt;
+--
+ private GeometricShape adaptee;
+ public GeometricShapeObjectAdapter(GeometricShape adaptee) {
+       super();
+       this.adaptee = adaptee;
+}
+void draw() {   // GeometricShap has no draw method, adapt one for it 
+                      //without add method in interface GeometricShap
+                      // via adapter we also can use shape to join
+                      // GeometricShape mathod  
+	adaptee.drawShape(); 
+}
+
+void resize() {
+ .....
+ }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>400</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>400</y>
+      <w>30</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>420</y>
+      <w>30</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>420</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>290</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+implement</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>290</y>
+      <w>90</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+reference</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

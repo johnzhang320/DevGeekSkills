@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration date="" lastupdatedby="" monitorInterval="10" packages="com.mailfrontier.msgcenter.app.log" status="warn" templateversion="5" writeversion="1">
+    <Appenders>       
+        <Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>%d{ISO8601}{GMT-0} ${sys:hostname} %X{emailid} %p %c{1}.%M() (%F:%L) - %m%n</Pattern>
+			</PatternLayout>
+        </Console>   
+        <RollingFile append="false" bufferedIO="false" fileName="${sys:logs.dir}/webUI/webui.json" filePattern="${sys:logs.dir}/webUI/webui_%i.json" name="rootFileJson">
+	  <!-- 
+               CustomizedJSONLayout is Dell SonicWall Customized JSON Layout, the result log file has been verified and be able to be displayed by Spluck tool
+               complete = true, add [ and ] for logging , normally false
+               compact = true, each logger event shown in one line which compact display option. false is standard Json structure format.
+               properties = true, shows all elements of ThreadContext Map in a sub json structure in json only, splunk displays first element, normally false
+               locationInfo = true, separately show class name, method name , file name, line number separately, if java logger event, "logger" field already show all of them in one line, so set it false 
+             -->
+             <CustomizedJSONLayout compact="false" complete="false" locationInfo="false" properties="false">
+             </CustomizedJSONLayout>
+		<Policies>				 
+			<SizeBasedTriggeringPolicy size="10 MB"/>
+		</Policies>
+			<CustomizedDefaultRolloverStrategy fileIndex="min" max="5"/>
+	</RollingFile>
+        <RollingFile append="false" bufferedIO="false" fileName="${sys:logs.dir}/searchengine/searchengine.json" filePattern="${sys:logs.dir}/searchengine/searchengine_%i.json" name="searchengineFileJson">
+			<CustomizedJSONLayout compact="false" complete="false" locationInfo="false" properties="false">
+            </CustomizedJSONLayout>
+		<Policies>		            	 		
+			<SizeBasedTriggeringPolicy size="10 MB"/>
+		</Policies>
+			<CustomizedDefaultRolloverStrategy fileIndex="min" max="5"/>
+	</RollingFile>		
+        <RollingFile append="false" bufferedIO="false" fileName="${sys:logs.dir}/dmarcreports/dmarcreport.json" filePattern="${sys:logs.dir}/dmarcreports/json/dmarcreport_%i.json" name="dmarcReportJsonFile">
+			<CustomizedJSONLayout compact="false" complete="false" locationInfo="false" properties="false">
+            </CustomizedJSONLayout>
+		<Policies>			
+			<SizeBasedTriggeringPolicy size="10 MB"/>
+		</Policies>
+			<CustomizedDefaultRolloverStrategy fileIndex="min" max="5"/>
+	</RollingFile>        
+<!-- 
+    <Socket host="192.168.168.170" name="splunkrawtcp" port="5151" protocol="TCP">
+   		<PatternLayout>
+                 <Pattern>{%n"logger":"%c{10}",%n"timestamp":"%d{ISO8601}{GMT-0}",%n"level":"%p",%n"hostname":"${sys:hostname}",%n"userId":"%X{emailid}",%n"message":"%m",%n"throwable":"%throwable"%n},%n</Pattern>
+  		</PatternLayout>
+	</Socket>
+-->                             
+   </Appenders> 
+	<Loggers>
+		<Root level="info">
+         		<!--<appender-ref ref="STDOUT"/>-->
+         		<appender-ref ref="rootFileJson"/>   
+		</Root>
+		<!-- Search Engine logs to different directory and inherits root level-->
+		<Logger additivity="false" level="info" name="com.sonicwall">        
+            		<!--<appender-ref ref="STDOUT"/>-->
+            		<appender-ref ref="searchengineFileJson"/>
+		</Logger>	
+		<!-- Dmarc Report logs to different directory and inherits root level-->
+		<Logger additivity="false" level="info" name="com.mailfrontier.msgcenter.app.model.dmarc.utils">        
+            		<!--<appender-ref ref="STDOUT"/>-->
+            		<appender-ref ref="dmarcReportJsonFile"/>
+		</Logger>
+		<Logger additivity="false" level="info" name="com.mailfrontier.msgcenter.app.model.dmarc.serviceImpl">        
+            		<!--<appender-ref ref="STDOUT"/>-->
+            		<appender-ref ref="dmarcReportJsonFile"/>
+		</Logger> 
+		<Logger additivity="false" level="info" name="com.mailfrontier.msgcenter.app.model.filters.conditions">        
+            		<!--<appender-ref ref="STDOUT"/>-->
+            		<appender-ref ref="dmarcReportJsonFile"/>
+		</Logger> 
+		<Logger additivity="false" level="info" name="com.mailfrontier.msgcenter.ui.admin.dmarc.reports">        
+            		<!--<appender-ref ref="STDOUT"/>-->
+            		<appender-ref ref="dmarcReportJsonFile"/>
+		</Logger> 
+      
+		<!-- Blocked Loggers -->
+     
+		<logger name="org.apache">
+			<level value="off"/>
+		</logger>
+		<logger name="com.mchange.v2">
+          		<level value="off"/>
+		</logger>   
+		 
+    </Loggers>
+	
+</Configuration>

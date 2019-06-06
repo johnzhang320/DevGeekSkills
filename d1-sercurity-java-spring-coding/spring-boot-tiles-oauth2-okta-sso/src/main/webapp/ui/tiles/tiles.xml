@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="mainLayout" template="/ui/jsp/layout/main.jsp">
+		<put-attribute name="header" value="/ui/jsp/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/ui/jsp/layout/footer.jsp" />
+	</definition>
+
+	<definition name="dashboard" extends="mainLayout">
+		<put-attribute name="body" value="/ui/jsp/view/dashboard.jsp" />
+	</definition>
+	<!-- =======================================================   
+	  Master definition  									 
+	  =======================================================  -->
+   
+   <definition name="spring.simpleLayout" template="/ui/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/ui/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/ui/jsp/common/menu.jsp" />	 
+		<put-attribute name="body" value="/ui/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/ui/jsp/common/footer.jsp" />
+	</definition> 
+	
+    <definition name="spring.popoutLayout" template="/ui/jsp/common/PopoutLayout.jsp">
+	  	<put-attribute name="body" value="/ui/jsp/common/blankBody.jsp" />	 
+	</definition> 
+	
+   <definition name="spring.leftMenuLayout" template="/ui/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/ui/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/ui/jsp/common/leftMenu.jsp" />	 
+		<put-attribute name="body" value="/ui/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/ui/jsp/common/footer.jsp" />
+	</definition> 	
+    <definition name="spring.leftMenuWiderLayout" template="/ui/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/ui/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/ui/jsp/common/leftMenu.jsp" />	 
+		<put-attribute name="body" value="/ui/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/ui/jsp/common/footer.jsp" />
+	</definition> 	
+	<!-- =======================================================   
+	     Child definitions 									 
+	     =======================================================  -->
+
+	<definition name="MasterDetailRow" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/ng-grid/masterDetailRowSelection.jsp" />
+ 	</definition>
+
+	<definition name="AgentSignup" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/form/AgentSignup.jsp" />
+ 	</definition>
+ 	<definition name="DmarcReports" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/form/DmarcReports.jsp" />
+ 	</definition>
+ 	<definition name="OAuth2" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/form/OAuth2.jsp" />
+ 	</definition>
+ 	<definition name="AgentLogin" extends="spring.leftMenuWiderLayout">
+ 	    <put-attribute name="Right" value="/ui/jsp/common/AgentRightSideBar.jsp" />
+		<put-attribute name="body" value="/ui/jsp/form/AgentLogin.jsp" />		 
+ 	</definition>
+ 	<definition name="HelpAgentSignup" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/ui/jsp/help/HelpAgentSignup.jsp" />
+ 	</definition>
+ 	<definition name="HelpDmarcReport" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/ui/jsp/ng-grid/masterDetailRowSelection.jsp" />
+ 	</definition>
+ 	<definition name="HelpAgentLogin" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/ui/jsp/help/HelpAgentLogin.jsp" />
+ 	</definition>
+	<definition name="AgentSignupSuccess" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/form/AgentSignupSuccess.jsp" />
+ 	</definition> 	
+ 	<definition name="AgentLoginSuccess" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/ui/jsp/form/AgentLoginSuccess.jsp" />
+ 	</definition>
+</tiles-definitions>

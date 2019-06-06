@@ -1,0 +1,3 @@
+run mavel install
+copy target/Spring4MVCFormValidationExample folder to tomcat webapp
+http://localhost:8080/Spring4MVCFormValidationExample

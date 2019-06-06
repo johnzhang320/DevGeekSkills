@@ -1,0 +1,13 @@
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/OAuth2SecurityConfiguration.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/MethodSecurityConfig.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/model/User.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/service/UserService.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/HelloWorldInitializer.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/model/AuthTokenInfo.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/HelloWorldConfiguration.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/AuthorizationServerConfiguration.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/ResourceServerConfiguration.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/SecurityWebApplicationInitializer.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/CORSFilter.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/service/UserServiceImpl.java
+/Users/jianzhang/Spring4/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/controller/HelloWorldRestController.java

@@ -1,0 +1,74 @@
+1. @JoinColumn usage.
+
+@OneToOne Mapping Example
+
+The @JoinColumn annotation combined with a @OneToOne mapping indicates that a given column in the owner entity 
+refers to a primary key in the reference entity:
+
+@Entity
+public class Office {
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "addressId")
+    private Address address;
+}
+The above code example will create a foreign key in the Office entity using the primary key of the Address 
+entity. The name of the foreign key column in the Office entity is specified by "name" property of @JoinColumn
+in other word, @JoinColumn aways be own (another table) primary key, also create same name in current table as foreign key
+
+3. @OneToMany Mapping Example
+
+When using a @OneToMany mapping we can use the mappedBy parameter to indicate that the given column is owned by another entity.
+
+@Entity
+public class Employee {
+  
+    @Id
+    private Long id;
+ 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    private List<Email> emails;
+}
+
+Above code means Employee is one and email is many, create List<Email>, mappedby Employee, 
+ 
+ 
+@Entity
+public class Email {
+  
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+}
+In the above example, Email (the owner entity) has a join column employee_id that stores the id value and has
+ a foreign key to the Employee entity. if employee primary key is 'id' (most confused) , then in many table
+ we can use table name plus id to create foreign key as employee_id even in employee table doesn't has employee_id
+ but only 'id' (very confused) JPA recognize employee_id in Email table is foreign key to refer to Employee table
+ 
+ If we want to avoid the confusion, we can add referenceColumnName="ID)
+ 
+ @Entity
+public class Email {
+  
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id" referencedColumnName="id")
+    private Employee employee;
+}
+ 
+ @JoinColumns
+
+In situations when we want to create multiple join columns we can use the @JoinColumns annotation:
+
+@Entity
+public class Office {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumns({
+        @JoinColumn(name="ADDR_ID", referencedColumnName="ID"),
+        @JoinColumn(name="ADDR_ZIP", referencedColumnName="ZIP")
+    })
+    private Address address;
+}
+The above example will create two foreign keys pointing to ID and ZIP columns in the Address entity:
+ 
+ 
+ 
+ 

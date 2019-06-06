@@ -1,0 +1,33 @@
+Company CEO send message to his underneath director or manager, they also resent the message to 
+their underneath employees so on so forth, each level people need there own time to send message
+and various below employees, suppose one person is able to send message to multiple underneadth persons at same time
+Question: find how long the message send to all company employee. if not send message out, would not sum their sending time
+
+               CEO(6)
+               /   \          \      \
+          Emp1(4)     Emp2(5) Emp3(3) Emp4(7)
+          /   \  \         \
+         /     \   \         \
+   Emp5(3) Emp6(5) Emp7(3) Emp8(7)
+       /  \           \
+      /     \          \
+  Emp9(3)   Emp10(1)   Emp11(2)
+  
+  
+  Analysis:
+  Suppose current level is n and parent level is n-1 and child level is n+1
+  we always calculate n-1 level sending time as sum time of current level
+  in other words , we check if each node in tree has their child node, if yes
+  sum += node sending time,  CEO level has four children, sum+=6, Emp1 has 3 children , sum+=4
+  Emp7 has one child sum+=3
+  
+  Algorithm
+  We use BFS to find node and check if they have child, because message sending directory always
+  from up to bottom, no need visited check
+  Implementation
+  (1) create Node with time, name and list<Node> belowNodes;
+  (2) use a queue to implement level access BFS by check belowsNode
+  (3) sum=0; check if node.belowNode!=null sum+=node.time
+  
+   
+  

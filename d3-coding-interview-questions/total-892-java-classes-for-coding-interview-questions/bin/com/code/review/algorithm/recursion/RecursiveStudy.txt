@@ -1,0 +1,12 @@
+ 
+Non Tail Recursion Call: working parts are placed after recursive calling, working part is accepting
+ the data poping out from calling stack, therefore is reverse order from pushing data
+ working part keep running until return condition met, in other word, working part already run before 
+ return condition met
+ 
+Tail Recursion Call: working part is placing before recursive calling, which is pushing data to 
+ calling stack, it is proceeding order as pushing data to calling stack
+ when return condition met , working part start to run, in other word working part do not run until
+ working condition met
+ 
+ 

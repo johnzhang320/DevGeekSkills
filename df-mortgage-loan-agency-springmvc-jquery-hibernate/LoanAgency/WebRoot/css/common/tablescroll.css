@@ -1,0 +1,118 @@
+.tablescroll
+{ font: 12px normal Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	 
+	margin-top:10px;
+	margin-left:5px;
+ 	margin-right:10px;
+	margin-bottom:10px;
+}
+.tablescollCaption {
+	width:820px;text-align:center;font-size:14px;font-weight:bold;color:blue;
+}
+.tablescroll td, 
+.tablescroll_wrapper,
+.tablescroll_head,
+.tablescroll_foot
+{ border:1px solid gray; }
+
+.tablescroll td
+{ padding:3px 5px; }
+
+.tablescroll_wrapper
+{ border-left:0; }
+
+.tablescroll_head
+{ font-size:11px; font-weight:bold; background-color:#eee; border-left:0; border-top:0; margin-bottom:3px; }
+
+.tablescroll thead td
+{ border-right:0; border-bottom:0;  background-color:lightblue;}
+
+.tablescroll tbody td
+{ border-right:0; border-bottom:0; }
+
+.tablescroll tbody tr.first td
+{ border-top:0; }
+
+.tablescroll_foot
+{ font-weight:bold; background-color:#eee; border-left:0; border-top:0; margin-top:3px; }
+
+.tablescroll tfoot td
+{ border-right:0; border-bottom:0; }
+
+.tableScrollbox {
+     	float:left;
+     	padding:10px;
+		margin-left:10px;	 
+ 		float:left;
+		margin-top:20px;
+		margin-left:20px;	 
+		width:740px; 	 
+		
+		
+    	background-image: url('../../images/layoutImages/verticalBlueToWhile.png');	 
+		background-repeat:repeat-x;  */
+     }
+     
+ 
+
+.tableScrollbox label.captain {
+          margin-top:20px;margin-bottom:20px;margin-left:220px;font-weight:bold;font-size:14px;
+     }      
+.tableScrollbox table {
+       
+        border: 1px black solid;
+        border-collapse: collapse;
+      }
+.tableScrollbox th {
+        border: 1px outset silver;
+        background-color: maroon;
+        color: white;
+      }
+     
+     
+.tableScrollbox td {
+        padding: 1px 2px;
+      }
+      
+. tsCaption {
+    	margin-left:220px;margin-top:20px;margin-bottom:20px;font-weight:bold;font-size:14px;
+	 }
+ .rowwhite {
+     	 background-color: white;
+     }
+ .rowshade  {
+     	 background-color: #f7f7f7;
+     }
+ .tableScrollbox tableHeight {
+      			height:800px;
+      }
+ .tstitle{
+		font-weight : bold; 
+		font-family: Arial;
+		font-size: 13px;
+		color:black;
+		text-align: center;
+
+
+	 }
+	 
+  #sortable { 
+            list-style-type: none; 
+ 			margin: 0; 
+ 			padding: 0; 
+ 			width: 100%; 
+ 			}
+ #sortable li {
+                margin: 3px 3px 3px 3px;
+ 				padding-top:3px; 
+ 				font-type:"Arial" ; 
+ 				font-size: 13px; 
+ 				height: 26px; 
+ 			 }
+  #sortable li:hover   {
+  			/*border:2px #ACD6EE solid;  */
+  			 background-color:RGB(120,120,120);	
+		/*	 background-image: url('/pics/structure/tables/table.navbar.gif');	
+	         background-repeat:repeat-x; */
+  					    
+  }

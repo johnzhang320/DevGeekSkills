@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+ 
+<beans>
+	<bean id="com.loan.agent.application" class="org.springframework.context.support.ClassPathXmlApplicationContext" lazy-init="true">
+		<constructor-arg>
+			<list>
+				
+				<value>applicationContext.xml</value>
+			    <!-- adding more xml  -->
+			 
+			</list>
+		</constructor-arg>
+	</bean>
+
+	
+
+</beans>
+ 

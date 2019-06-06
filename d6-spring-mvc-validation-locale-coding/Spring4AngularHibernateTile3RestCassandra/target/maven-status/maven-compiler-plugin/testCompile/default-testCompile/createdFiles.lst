@@ -1,0 +1,6 @@
+com/mongo/cassandra/test/MongoDBTest.class
+com/basic/hibernate/dao/DmarcReportsTest.class
+com/controller/test/DmarcControllerTest.class
+com/mongo/cassandra/test/CassandraTest.class
+com/basic/hibernate/dao/CreateCountryDB.class
+com/controller/test/CountryCityRestTest.class

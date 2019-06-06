@@ -1,0 +1,8 @@
+FIn proxy pattern, a class represents functionality of another class. 
+his type of design pattern comes under structural pattern.
+
+In proxy pattern, we create object having original object to interface its functionality to outer world.
+
+Implementation
+We are going to create an Image interface and concrete classes implementing the Image interface. 
+ProxyImage is a a proxy class to reduce memory footprint of RealImage object loading.

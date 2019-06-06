@@ -1,0 +1,11 @@
+In Calling center, there are three types of employee, fresher,technical lead(TL),product manager(PM) , multiple fresher, one TL and PM
+A incoming calling must be allocated to a fresher who is free,If fresher can't handle the call, he or she must escalate the call to 
+TL, if TL is not free or not able to handle it, then call should be escalated to PM, Design the getCallHander. Each calling has their
+calling level, if level is 0 , fresher and others can handle. 1, only TL/PM can handle, 2 only PM can handle, if people is not free
+waiting in the queue until they can handle.
+
+(1) Design employee with empRank,boolean free 
+(2) Design call with rank, handling, waiting, disconnect
+(3) Design empRank enum FRESHER(0), TL(1),PM(2);
+(4) Design ArrayList<employee>[] (5) 
+(5) Two Loop level scan, external loop is callingRank ~ EmpLevel, second loop is number of employee 

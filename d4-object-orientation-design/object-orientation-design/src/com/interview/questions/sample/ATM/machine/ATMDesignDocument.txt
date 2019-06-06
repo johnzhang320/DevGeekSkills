@@ -1,0 +1,41 @@
+Design ATM Machine ?
+We all use ATM (Automated Teller Machine) , Just think how will you design an ATM ? for designing financial system one must 
+requirement is that they should work as expected in all situation. so no matter whether its power outage ATM should maintain 
+correct state (transactions), think about locking, transaction, error condition, boundary condition etc. even if you not able 
+to come up exact design but if you be able to point out non functional requirement, raise some question , think about boundary
+condition will be good progress.
+
+* Requirement Analysis
+  (1) ATM Machine, basically we can access at least checking and saving account
+  (2) Each Account has user name, password word and account id, account balance associated with account id, support login function, 
+      user id is session
+      to find all accounts (saving check even brokerage account)
+  (3) Account access we must support deposit, withdrow and transfer between different account.
+  (4) Withdraw, we have 20, 40, 60, 80, 100, 200 choice
+  (5) BankTeller to support open an account. add account on same user .
+  
+* implementation 
+   
+   (1) deposit we synchronized the account
+   (2) withdraw we synchronized the method, we provides combination of denomination of dollar choice. therefore we have Map<denomination, count> inventory
+   (3) In order to prevent dead lock, when we transfer the money from one account to another, we always comparing 
+       which account id is smaller, synchronized (lock) smaller first and larger one second
+   (4) Check if balance is sufficient or not
+   
+   (5) Create the thread to simulate the customer activities
+   
+ * performance 
+    user login simulate the scan bank card on ATM machine, username and social security have their own indexes
+       Map<T, Integer> which is index to be joint to userMap database, user and account objects are always kept one 
+       copy in database, indexes only keep keywords(username or Social Security) associated with userId
+       Ensure search by username or ssNO in time complexity O(1) Find userId by index map is O(1) and userId find user
+       object in O(1) in HashMap, even million users login at same time, keep O(1) search time for each.
+       
+ * Multi threads
+   Prevent dead lock when transfer from one account to another, compare accountId of two of them, always lock smaller one first
+   synchronize while deposit and withdraw.
+   use ConcurrentHashMap and ensure lock row level instead of entire map. prevent map from ConcurrentModificationException while remove of i
+   iterator.
+          
+       
+       

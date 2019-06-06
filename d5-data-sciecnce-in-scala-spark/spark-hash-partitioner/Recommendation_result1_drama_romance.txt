@@ -1,0 +1,78 @@
+ ------------------Selected the movie I like , mostly drame | romance ----------------------------
+jzhang@jzhang-Inspiron-15-7579:~/Intellipaat/spark/SparkWorkSpace/MovieLensAls/data/medium$ ./rateMovies.py 
+Looks like you've already rated the movies. Overwrite ratings (y/N)? y 
+Please rate the following movie (1-5 (best), or 0 if not seen): 
+Toy Story (1995) Animation|Children|Comedy: 0
+Sense and Sensibility (1995) Drama|Romance: 4.5
+Please rate the following movie (1-5 (best), or 0 if not seen): 
+Sense and Sensibility (1995) Drama|Romance: 4
+Wings of Courage (1995) Adventure|Romance: 5
+How to Make an American Quilt (1995) Drama|Romance: 4
+Leaving Las Vegas (1995) Drama|Romance: 3
+Mortal Kombat (1995) Action|Adventure: 3
+Good Man in Africa A (1994) Action|Adventure: 4
+Independence Day (a.k.a. ID4) (1996): 0
+Dances with Wolves (1990): 4 
+Star Wars: Episode VI - Return of the Jedi (1983): 0
+Mission: Impossible (1996): 0
+Ace Ventura: Pet Detective (1994): 0
+Die Hard: With a Vengeance (1995): 0
+Batman Forever (1995): 0
+Pretty Woman (1990): 0
+Men in Black (1997): 0
+Dumb & Dumber (1994): 0
+
+
+--------------------------------------MovieLenALS.scala recommendation me the similiar movie -----------------------------
+
+ 1: Bandits (1997), Drama, total rating:, total rating: 5.061203819995322
+ 2: Tic Code, The (1998), Drama, total rating:, total rating: 4.965032602955137
+ 3: When Night Is Falling (1995), Drama|Romance, total rating:, total rating: 4.7850442389960275i
+ 4: Smashing Time (1967), Comedy, total rating:, total rating: 4.7725818225335335
+ 5: And the Ship Sails On (E la nave va) (1984), Comedy|War, total rating:, total rating: 4.739018902644192
+ 6: Affair to Remember, An (1957), Romance, total rating:, total rating: 4.628392803267616
+ 7: Firelight (1997), Drama, total rating:, total rating: 4.589727083242241
+ 8: Window to Paris (1994), Comedy, total rating:, total rating: 4.5654164772265355
+ 9: Small Wonders (1996), Documentary, total rating:, total rating: 4.554069919528064
+10: Dangerous Game (1993), Drama, total rating:, total rating: 4.542045790926001
+11: I'm the One That I Want (2000), Comedy, total rating:, total rating: 4.538771155402468
+12: Bewegte Mann, Der (1994), Comedy, total rating:, total rating: 4.537678251800224
+13: King of Masks, The (Bian Lian) (1996), Drama, total rating:, total rating: 4.537030625847403
+14: Belly (1998), Crime|Drama, total rating:, total rating: 4.529087896226576
+15: Shawshank Redemption, The (1994), Drama, total rating:, total rating: 4.520980715471574
+16: Sound of Music, The (1965), Musical, total rating:, total rating: 4.4825887856595745
+17: Mating Habits of the Earthbound Human, The (1998), Comedy, total rating:, total rating: 4.479720806439651
+18: Steal Big, Steal Little (1995), Comedy, total rating:, total rating: 4.470212745396037
+19: Life Is Beautiful (La Vita � bella) (1997), Comedy|Drama, total rating:, total rating: 4.460744981608617
+20: One Magic Christmas (1985), Drama|Fantasy, total rating:, total rating: 4.450730712347397
+21: Better Living Through Circuitry (1999), Documentary, total rating:, total rating: 4.423064546233758
+22: Love & Sex (2000), Comedy|Romance, total rating:, total rating: 4.409877936354138
+23: Dead Poets Society (1989), Drama, total rating:, total rating: 4.406514318442287
+24: Schindler's List (1993), Drama|War, total rating:, total rating: 4.38669523892653
+25: Farinelli: il castrato (1994), Drama|Musical, total rating:, total rating: 4.3710835392928065
+26: Monster, The (Il Mostro) (1994), Comedy, total rating:, total rating: 4.366181964756823
+27: Love and Other Catastrophes (1996), Romance, total rating:, total rating: 4.364771561724632
+28: Dangerous Beauty (1998), Drama, total rating:, total rating: 4.363463274369623
+29: Remember the Titans (2000), Drama, total rating:, total rating: 4.359764704267873
+30: Steel Magnolias (1989), Drama, total rating:, total rating: 4.35898270302738
+31: Slipper and the Rose, The (1976), Adventure|Musical|Romance, total rating:, total rating: 4.356575602158838
+32: Grateful Dead (1995), Documentary, total rating:, total rating: 4.354644377964133
+33: Dirty Dancing (1987), Musical|Romance, total rating:, total rating: 4.35371397501234
+34: Johns (1996), Drama, total rating:, total rating: 4.349214564245186
+35: Ayn Rand: A Sense of Life (1997), Documentary, total rating:, total rating: 4.346226861102316
+36: American History X (1998), Drama, total rating:, total rating: 4.336257212513194
+37: My Life So Far (1999), Drama, total rating:, total rating: 4.335112307304406
+38: Jupiter's Wife (1994), Documentary, total rating:, total rating: 4.330603561971209
+39: D�j� Vu (1997), Drama|Romance, total rating:, total rating: 4.300875591163452
+40: Sixth Sense, The (1999), Thriller, total rating:, total rating: 4.300024290698841
+41: Good Will Hunting (1997), Drama, total rating:, total rating: 4.299109385052967
+42: Shower (Xizhao) (1999), Comedy, total rating:, total rating: 4.295560201001963
+43: Other Sister, The (1999), Comedy|Drama|Romance, total rating:, total rating: 4.292986276502457
+44: Erin Brockovich (2000), Drama, total rating:, total rating: 4.290116976882494
+45: Love in the Afternoon (1957), Comedy|Romance, total rating:, total rating: 4.280926083359111
+46: Usual Suspects, The (1995), Crime|Thriller, total rating:, total rating: 4.267207762902197
+47: Forrest Gump (1994), Comedy|Romance|War, total rating:, total rating: 4.265846424011568
+48: Madame Butterfly (1995), Musical, total rating:, total rating: 4.261681717203471
+49: Big Trees, The (1952), Action|Drama, total rating:, total rating: 4.260877042683044
+50: My Fair Lady (1964), Musical|Romance, total rating:, total rating: 4.257726076557661
+

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	
+	
+
+   <context:annotation-config />
+
+    
+
+	
+	<!-- datasource -->
+   <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />    	   
+		<property name="username" value="johnz148_agent"></property>
+		<property name="password" value="nus658742478"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/johnz148_mortgage_agency"> -->
+		 
+	 
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+		<property name="username" value="johnz148_agent"></property>
+		<property name="password" value="nus658742478"></property>
+		<property name="url" value="jdbc:mariadb://localhost:3306/johnz148_mortgage_agency"> </property>
+    </bean>
+
+   <!-- template -->
+   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+       <property name="dataSource" ref="dataSource2" />
+   </bean>
+
+   <!-- services -->
+   <!-- <bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/johnz148_mortgage_agency">
+		</property>
+		<property name="username" value="johnz148_agent"></property>
+		<property name="password" value="nus658742478"></property>
+	</bean> 	
+	-->
+   <bean id="dataSource" class = "com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/johnz148_mortgage_agency" />
+        <property name="user" value="johnz148_agent" />
+        <property name="password" value="nus658742478" />   		
+         
+       <property name="checkoutTimeout" value="120000" /> 
+        <property name="testConnectionOnCheckout" value="true" />
+        <property name="autoCommitOnClose" value="true" />      
+     
+        <property name="minPoolSize" value="10" />
+        <property name="maxPoolSize" value="500" />
+        <property name="maxIdleTime" value="3000" />
+   </bean>
+  
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+				<prop key="hibernate.transaction.auto_close_session">true</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">false</prop>
+				<prop key="hibernate.connection.autocommit">true</prop>
+				<prop key="hibernate.connection.autoReconnect">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/loan/agent/dao/AppCheckList.hbm.xml</value>
+				<value>com/loan/agent/dao/Users.hbm.xml</value>
+				<value>com/loan/agent/dao/CreditCard.hbm.xml</value>
+				<value>com/loan/agent/dao/Reply.hbm.xml</value>
+				<value>com/loan/agent/dao/Quote.hbm.xml</value>
+				<value>com/loan/agent/dao/Niches.hbm.xml</value>
+				<value>com/loan/agent/dao/Agents.hbm.xml</value>
+				<value>com/loan/agent/dao/Compare.hbm.xml</value>
+				<value>com/loan/agent/dao/State.hbm.xml</value>
+				<value>com/loan/agent/dao/County.hbm.xml</value>				
+				<value>com/loan/agent/dao/Zipcodes.hbm.xml</value>
+				<value>com/loan/agent/dao/RateSheet.hbm.xml</value> 
+				<value>com/loan/agent/dao/SessionManager.hbm.xml</value>
+			</list>	
+			
+		</property>
+	</bean>
+		
+ 
+	
+	
+	
+			<!-- Transaction Manager and Proxy -->
+	<!-- Hibernate Transaction  -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- Base Transaction Proxy-->
+	<bean id="baseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"	abstract="true">
+		 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="persist*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="edit*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="merge*">PROPAGATION_REQUIRED</prop>
+				<prop key="lock*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="fingById*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="getTotalNums*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="disPlay*">PROPAGATION_REQUIRES_NEW</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Customized Transaction Proxy -->
+	<!--  Define Registration Target -->
+	<bean id="TargetDB" class="com.loan.agent.services.impl.QuoteDBServiceImpl"   >
+	
+		<property name="quoteDAO" ref="QuoteDAO" /> 
+		<property name="stateDAO" ref="StateDAO" />
+		<property name="usersDAO" ref="UsersDAO" />
+		<property name="replyDAO" ref="ReplyDAO" />
+		<property name="nichesDAO" ref="NichesDAO" />
+		<property name="creditCardDAO" ref="CreditCardDAO" />
+		<property name="countyDAO" ref="CountyDAO" />
+		<property name="compareDAO" ref="CompareDAO" />
+		<property name="agentsDAO" ref="AgentsDAO" />
+		<property name="zipcodesDAO" ref="ZipcodesDAO" /> 		
+		<property name="rateSheetDAO" ref="RateSheetDAO" /> 	
+		<property name="sessionManagerDAO" ref="SessionManagerDAO" /> 	
+		<property name="appCheckListDAO" ref="AppCheckListDAO" />  
+	</bean>
+	
+   <!-- Auto wired by XML -->
+	<bean id="QuoteDBService" parent="baseTransactionProxy" >
+		<property name="target" ref="TargetDB" />
+	</bean>  
+	
+	<!-- Initialize user data -->	
+	<bean id="LookupDataInitialService"
+		class="com.loan.agent.services.impl.LookupDataInitialServiceImpl"
+		scope="singleton" >
+		 
+	</bean>		
+ 
+  <!--  <bean id="job" class="com.loan.agent.mvc.utils.AgentOnDutyTask"/>
+
+    <bean id="timerTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+        <property name="delay" value="6000" />
+        <property name="period" value="3600000" />
+        <property name="timerTask" ref="job" />
+    </bean>
+
+    <bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+        <property name="scheduledTimerTasks">
+            <list>
+                <ref local="timerTask"/>
+            </list>
+        </property>
+    </bean>	
+    -->
+  
+	<bean id="UsersDAO" class="com.loan.agent.dao.UsersDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CreditCardDAO" class="com.loan.agent.dao.CreditCardDAO"> 
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ReplyDAO" class="com.loan.agent.dao.ReplyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	 
+	<bean id="QuoteDAO" class="com.loan.agent.dao.QuoteDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AgentsDAO" class="com.loan.agent.dao.AgentsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CompareDAO" class="com.loan.agent.dao.CompareDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+ 
+	<bean id="StateDAO" class="com.loan.agent.dao.StateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CountyDAO" class="com.loan.agent.dao.CountyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="ZipcodesDAO" class="com.loan.agent.dao.ZipcodesDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="RateSheetDAO" class="com.loan.agent.dao.RateSheetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="AgentReviewService"
+		class="com.loan.agent.services.impl.AgentReviewServiceImpl"
+		scope="singleton">
+	  <!--  <property name="timerPeriod" value="3000"/> -->		 
+	</bean>	
+	<bean id="UserReviewService"
+		class="com.loan.agent.services.impl.UserReviewServiceImpl"
+		scope="singleton">
+	  <!--  <property name="timerPeriod" value="3000"/> -->
+		 
+	</bean>	
+		<bean id="AgentAdService"
+		class="com.loan.agent.services.impl.AgentAdServiceImpl"
+		scope="singleton">	 
+	</bean>
+		<bean id="NichesDAO" class="com.loan.agent.dao.NichesDAO">
+			<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+			</property>
+		</bean>
+		<bean id="AppCheckListDAO"
+			class="com.loan.agent.dao.AppCheckListDAO">
+			<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+			</property>
+		</bean>
+		<bean id="SessionManagerDAO"
+			class="com.loan.agent.dao.SessionManagerDAO">
+			<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+			</property>
+		</bean>
+		<bean id="DepartmentsDAO"
+			class="com.loan.agent.dao.DepartmentsDAO">
+			<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+			</property>
+		</bean></beans>

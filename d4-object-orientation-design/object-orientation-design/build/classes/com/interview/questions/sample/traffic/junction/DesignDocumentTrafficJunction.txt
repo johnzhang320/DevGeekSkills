@@ -1,0 +1,15 @@
+
+Design a Traffic Controller System for a Junction?
+You need to design a software to control traffic lights at a junction where traffic are coming from four sides. 
+It should follow basic traffic rules, allow a pedestrian to cross the road, and traffic to pass in reasonable time.
+How do you optimize the waiting time with respect to high traffic from one direction e.g. during morning and evening rush hours?
+
+Implementation by John Zhang
+
+(1) We desgin 4 threads to simulate the four sides comming traffic and pedestrain and add them into queues
+(2) We design one timer thread to turn on/off direction, on means horizantal direction and off means vertical 
+(3) We design 4 threads to simulate passing traffic, if horizantal, two threads to simulate east to west or west to east
+    another two threads to simulate north to south or south to north
+(4) Design traffic interface , implemented by vechicle and pedestrain classes , contain direction, id, comingFrequence, passingSpeed
+(5) Design enum contain EAST, WEST,NORTH and SOUTH as TrafficSide, and Direction contain direction boolean variable 
+ 

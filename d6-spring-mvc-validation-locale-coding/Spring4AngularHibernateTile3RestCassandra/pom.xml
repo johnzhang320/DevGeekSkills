@@ -1,0 +1,287 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Spring4AngularHibernateTile3RestCassandra</groupId>
+  <artifactId>Spring4AngularHibernateTile3RestCassandra</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+  <name/>
+  <description/>
+  
+  <url>http://maven.apache.org</url>
+ 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     	<springframework.version>4.0.6.RELEASE</springframework.version>
+     	<hibernate.version>4.3.6.Final</hibernate.version>
+ 	  	<tile.version>3.0.5</tile.version>    
+ 		<joda-time.version>2.3</joda-time.version>
+ 		<jackson.version>2.5.3</jackson.version>
+ 		<jersey.version>2.6</jersey.version>
+   </properties>
+  
+
+  <dependencies>
+    <dependency>
+		<groupId>org.apache.ant</groupId>
+		<artifactId>ant-apache-regexp</artifactId>
+		<version>1.9.4</version>
+	</dependency>  
+	
+   <!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+
+	<!-- Hibernate -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+		  <!-- JS302 bean Validation -->
+	<dependency>
+    	<groupId>org.hibernate</groupId> 
+   	 	<artifactId>hibernate-validator</artifactId>
+    	<version>5.0.1.Final</version>
+	</dependency>
+     <dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.2</version>
+	</dependency>
+	 <dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>1.3.2</version>
+	</dependency>
+	 
+  	<dependency>
+	    <groupId>org.mariadb.jdbc</groupId>
+	    <artifactId>mariadb-java-client</artifactId>
+	    <version>1.1.9</version>
+	</dependency>
+	<dependency>
+		<groupId>struts</groupId>
+		<artifactId>struts</artifactId>
+		<version>1.1</version>
+	</dependency>
+	  <dependency>
+	  <groupId>org.apache.tiles</groupId>
+  	  <artifactId>tiles-core</artifactId>
+	  <version>${tile.version}</version>
+	  <scope>compile</scope>
+   </dependency>
+   <dependency>
+	  <groupId>org.apache.tiles</groupId>
+  	  <artifactId>tiles-jsp</artifactId>
+	  <version>${tile.version}</version>
+	    <scope>compile</scope>
+   </dependency>
+    <dependency>
+	  <groupId>org.apache.tiles</groupId>
+  	  <artifactId>tiles-api</artifactId>
+	  <version>${tile.version}</version>
+	  <scope>compile</scope>
+   </dependency>
+ 
+   <dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-log4j12</artifactId>
+	  <version>1.7.25</version>
+   </dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	  </dependency>  
+	<!-- Joda-Time -->		
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		<version>${joda-time.version}</version>
+ 	</dependency>
+ 	
+ 	<!-- To map JodaTime with database type -->  		
+  		<dependency>
+    		<groupId>org.jadira.usertype</groupId>
+    		<artifactId>usertype.core</artifactId>
+    		<version>3.0.0.CR1</version>
+		</dependency>
+ 	
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+   <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.16</version>
+	</dependency>	
+	
+   <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <scope>provided</scope>
+	</dependency>
+   
+   	 <dependency>
+		   <groupId>org.bouncycastle</groupId>
+		   <artifactId>bcprov-jdk16</artifactId>
+		   <version>1.45</version>
+ 	</dependency>
+     <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>3.8.1</version>
+	</dependency>
+	
+	     <dependency>
+         <groupId>com.datastax.cassandra</groupId>
+         <artifactId>cassandra-driver-core</artifactId>
+         <version>3.1.4</version>
+      </dependency>
+	 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-dbcp2</artifactId>
+	    <version>2.1.1</version>
+	</dependency>
+	 
+      <dependency>
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>16.0.1</version>
+      </dependency>
+ 
+      <dependency>
+         <groupId>com.codahale.metrics</groupId>
+         <artifactId>metrics-core</artifactId>
+         <version>3.0.2</version>
+      </dependency>
+		 <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	 
+      <dependency>
+         <groupId>io.netty</groupId>
+         <artifactId>netty</artifactId>
+         <version>3.9.0.Final</version>
+      </dependency>
+	<dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-databind</artifactId>
+         <version>${jackson.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>com.fasterxml.jackson.dataformat</groupId>
+         <artifactId>jackson-dataformat-xml</artifactId>
+         <version>${jackson.version}</version>
+     </dependency>
+ 
+   <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
+	<dependency>
+	    <groupId>org.glassfish.jersey.media</groupId>
+	    <artifactId>jersey-media-json-jackson</artifactId>
+	    <version>${jersey.version}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet-core -->
+	<dependency>
+	    <groupId>org.glassfish.jersey.containers</groupId>
+	    <artifactId>jersey-container-servlet-core</artifactId>
+	    <version>${jersey.version}</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20160810</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+	<dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongo-java-driver</artifactId>
+	    <version>3.4.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.13</version>
+	</dependency>
+	
+	  <dependency>
+         <groupId>com.datastax.cassandra</groupId>
+         <artifactId>cassandra-driver-core</artifactId>
+         <version>3.1.4</version>
+      </dependency>
+ 
+      <dependency>
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>16.0.1</version>
+      </dependency>
+ 
+      <dependency>
+         <groupId>com.codahale.metrics</groupId>
+         <artifactId>metrics-core</artifactId>
+         <version>3.0.2</version>
+      </dependency>
+		 <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		 
+	 <!-- https://mvnrepository.com/artifact/io.netty/netty-transport-native-epoll -->
+	<dependency>
+	    <groupId>io.netty</groupId>
+	    <artifactId>netty-transport-native-epoll</artifactId>
+	    <version>4.0.33.Final</version>
+	</dependency>
+  </dependencies>
+	  <build>
+	  <pluginManagement>
+	    <plugins>
+	      <plugin>
+	       		<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<warName>Spring4AngularHibernateTile3RestCassandra</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+	      </plugin>
+	      <plugin>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <configuration>
+	          <source>1.8</source>
+	          <target>1.8</target>
+	        </configuration>
+	      </plugin>
+	    </plugins>
+	    </pluginManagement>
+	    <finalName>Spring4AngularHibernateTile3RestCassandra</finalName>
+	  </build>
+</project>

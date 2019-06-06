@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="23" failures="0" name="TestSuite" time="0.609" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Zulu\zulu-8\jre\bin"/>
+    <property name="java.vm.version" value="25.66-b17"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Spring4\SpringHibernateExample"/>
+    <property name="java.vendor.url" value="http://www.azulsystems.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Spring4\SpringHibernateExample"/>
+    <property name="java.runtime.version" value="1.8.0_66-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Zulu\zulu-8\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\JOHNZH~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Spring4\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1736347637255338093.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Zulu\zulu-8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\ProgramData\Oracle\Java\javapath;D:\hadoop-2.6.2\bin;C:\java\Cassandra3.8.0\apache-cassandra\bin;c:\java\mongodb\bin;C:\cygwin64\bin;C:\java\Cassandra3.8.0\python;C:\Program Files\Zulu\zulu-8\bin;C:\Tools\Eclipse64\eclipse\eclipse.exe;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\SonicWallES\MySQL\bin;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\SonicWallES;C:\Program Files (x86)\SonicWallES\lib;C:\Program Files (x86)\SonicWallES\lib\perceptive;C:\Program Files\SonicWallES;C:\Dev\Tomcat-8.5.8\bin;C:\java\openSSL32\bin;C:\Program Files (x86)\Skype\Phone\;D:\hadoop-2.6.2\bin;D:\hadoop-2.6.2\share\hadoop\common\;D:\hadoop-2.6.2\share\hadoop\hdfs;D:\hadoop-2.6.2\share\hadoop\hdfs\lib\;D:\hadoop-2.6.2\share\hadoop\hdfs\;D:\hadoop-2.6.2\share\hadoop\yarn\lib\;D:\hadoop-2.6.2\share\hadoop\yarn\;D:\hadoop-2.6.2\share\hadoop\mapreduce\lib\;D:\hadoop-2.6.2\share\hadoop\mapreduce\;D:\hadoop-2.6.2\share\hadoop\common\lib\;C:\Users\John Zhang\AppData\Local\Microsoft\WindowsApps;;C:\Users\John Zhang\Desktop;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\John Zhang"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="John Zhang"/>
+    <property name="java.class.path" value="/C:/Users/John Zhang/eclipse/jee-mars/eclipse/../../../.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.6.2.20150902-0001/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Zulu\zulu-8\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_66"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Zulu\zulu-8\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Zulu\zulu-8\jre\lib\resources.jar;C:\Program Files\Zulu\zulu-8\jre\lib\rt.jar;C:\Program Files\Zulu\zulu-8\jre\lib\sunrsasign.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jsse.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jce.jar;C:\Program Files\Zulu\zulu-8\jre\lib\charsets.jar;C:\Program Files\Zulu\zulu-8\jre\lib\jfr.jar;C:\Program Files\Zulu\zulu-8\jre\classes"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="maven.home" value="C:\Spring4\SpringHibernateExample\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="deleteEmployee" time="0.038"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="editEmployee" time="0.098"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="listEmployees" time="0.026"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="newEmployee" time="0.003"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="saveEmployeeWithSuccess" time="0.006"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="saveEmployeeWithValidationError" time="0.002"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="saveEmployeeWithValidationErrorNonUniqueSSN" time="0.015"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="updateEmployeeWithSuccess" time="0.003"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="updateEmployeeWithValidationError" time="0.002"/>
+  <testcase classname="com.websystique.springmvc.controller.AppControllerTest" name="updateEmployeeWithValidationErrorNonUniqueSSN" time="0.003"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="deleteEmployeeByInvalidSsn" time="0.321"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="deleteEmployeeBySsn" time="0.005"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="findAllEmployees" time="0"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="findById" time="0.016"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="findEmployeeBySsn" time="0.016"/>
+  <testcase classname="com.websystique.springmvc.dao.EmployeeDaoImplTest" name="saveEmployee" time="0.047"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="deleteEmployeeBySsn" time="0.002"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="findAllEmployees" time="0.001"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="findById" time="0.001"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="findEmployeeBySsn" time="0.001"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="isEmployeeSsnUnique" time="0.001"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="saveEmployee" time="0.001"/>
+  <testcase classname="com.websystique.springmvc.service.EmployeeServiceImplTest" name="updateEmployee" time="0.001"/>
+</testsuite>

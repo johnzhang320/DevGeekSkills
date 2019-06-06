@@ -1,0 +1,53 @@
+hibernate.connection.driver_class=org.mariadb.jdbc.Driver
+hibernate.connection.url=jdbc:mariadb://localhost:3306/dbrelations_hibernate
+hibernate.connection.username=root
+hibernate.connection.password=mariadbpwd
+hibernate.connection.autocommit=true
+jdbc.password=mariadbpwd
+
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=true
+# hibernate.hbm2ddl.auto = create -- drop current tables and recreate again only effects on metadata we defined in SessionFactoryService
+# hibernate.hbm2ddl.auto = validate -- update and query existing tables
+hibernate.hbm2ddl.auto=create
+# c3p0 connection pool
+hibernate.c3p0.min_size=5
+hibernate.c3p0.max_size=200
+hibernate.c3p0.timeout=180
+hibernate.c3p0.max_statements=50
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd"
+>
+
+    <context:property-placeholder location="classpath:persistence-mysql.properties"/>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.baeldung.persistence.model"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.eventGeneratedId}"/>
+        <property name="password" value="${jdbc.pass}"/>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+</beans>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>600</y>
+      <w>360</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>_BinaryObserver_
+&lt;Class&gt;
+--
+  public OctalObserver(Subject subject){
+	      this.subject = subject;
+	      this.subject.attach(this);
+	   }
+	  @Override
+	   public void update() {
+	      System.out.println( "Octal String: " 
+	      + Integer.toBinaryString( subject.getState() ) ); 
+	   }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>30</y>
+      <w>350</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>_Subject_
+&lt;Class&gt;
+--
+ArrayList&lt;Oberver&gt; obsList;
+  private int state;
+public int getState() {
+	      return state;
+	   }
+public void setState(int state) {
+	      this.state = state;
+	      notifyAllObservers();
+	   }
+oid attach(Observer obs) {
+   absList.add(obs);
+   }
+void  notifyAllObservers() {
+ for (Observer obs:obsList) {
+    obs.update();
+  }
+}        </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>390</y>
+      <w>360</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>_Observer_
+&lt;Abstract Class&gt;
+--
+abstract protected Subject subject;
+abstract public void update()
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>490</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>600</y>
+      <w>360</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>_BinaryObserver_
+&lt;Class&gt;
+--
+  public BinaryObserver(Subject subject){
+	      this.subject = subject;
+	      this.subject.attach(this);
+	   }
+	  @Override
+	   public void update() {
+	      System.out.println( "Binary String: " 
+	      + Integer.toBinaryString( subject.getState() ) ); 
+	   }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>350</y>
+      <w>360</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>_BinaryObserver_
+&lt;Class&gt;
+--
+  public OctalObserver(Subject subject){
+	      this.subject = subject;
+	      this.subject.attach(this);
+	   }
+	  @Override
+	   public void update() {
+	      System.out.println( "Octal String: " 
+	      + Integer.toBinaryString( subject.getState() ) ); 
+	   }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>490</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>450</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>340</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>30</y>
+      <w>360</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>_ ObserverPatternDemo _
+&lt;Class&gt;
+--
+ public static void main(String[] args) {
+      Subject subject = new Subject();
+
+      new HexaObserver(subject);
+      new OctalObserver(subject);
+      new BinaryObserver(subject);
+
+      System.out.println("First state change: 15");	
+      subject.setState(15);
+      System.out.println("Second state change: 10");	
+      subject.setState(10);
+   }</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

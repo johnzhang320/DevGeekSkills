@@ -1,0 +1,13 @@
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/ResourceServerConfiguration.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/CORSFilter.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/model/User.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/SecurityWebApplicationInitializer.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/AuthorizationServerConfiguration.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/OAuth2SecurityConfiguration.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/controller/HelloWorldRestController.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/HelloWorldInitializer.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/service/UserServiceImpl.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/service/UserService.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/security/MethodSecurityConfig.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/configuration/HelloWorldConfiguration.java
+/Users/jianzhang/JZWorkspace/RefinedDev/SpringSecurityOAuth2Example/src/main/java/com/websystique/springmvc/model/AuthTokenInfo.java

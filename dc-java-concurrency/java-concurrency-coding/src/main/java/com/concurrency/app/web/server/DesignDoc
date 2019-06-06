@@ -1,0 +1,8 @@
+Design concurrency web server 
+which is able to handle millions requests with a-synchronous approaches
+(1) Concurrency Server create multiple threads in fixed size thread pool
+(2) server listen 80 port number request by server socket
+(3) server accept client connection socket 
+(4) server create blockqueue <client socket> singleton instance
+(5) request process thread queue.take() wait the blockqueue client socket available
+ 

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <context:annotation-config />
+   
+	<!-- datasource -->
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 	 
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
+		<property name="username" value="root"></property>
+		<property name="password" value="mariadbpwd"></property>
+		<property name="url" value="jdbc:mariadb://localhost:3306/spring_jdbctemplate_hibernate"> </property>
+    </bean>
+
+   <!-- template -->
+   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+       <property name="dataSource" ref="dataSource" />
+   </bean>
+   
+    
+    
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+        <property name="packagesToScan" value="com.hibernate.one.to.many.model"/>
+		<property name="hibernateProperties">
+			<props>
+			    <prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.jdbc.batch_size">10</prop>
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.connection.release_mode">after_statement</prop>
+				<prop key="hibernate.transaction.auto_close_session">true</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">false</prop>
+				<prop key="hibernate.connection.autocommit">true</prop>
+				<prop key="hibernate.connection.autoReconnect">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+	 
+	</bean>
+ 
+<!-- Transaction Manager and Proxy -->
+	<!-- Hibernate Transaction  -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- Base Transaction Proxy-->
+	<bean id="baseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"	abstract="true">
+		 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="persist*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED,-Exception
+				</prop>
+				<prop key="writ*">PROPAGATION_REQUIRED</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="edit*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="merge*">PROPAGATION_REQUIRED</prop>
+				<prop key="lock*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="fingById*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="getTotalNums*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="disPlay*">PROPAGATION_REQUIRES_NEW</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Customized Transaction Proxy -->
+	<!--  Define Registration Target  parent="baseTransactionProxy" -->
+	<!-- <bean id="targetDB" class="com.hibernate.base.service.impl.SerivceProxyDAOImpl"   >
+	
+		<property name="categoryDAO" ref="categoryDAO" /> 
+	 
+	</bean> -->
+	
+   <!-- Auto wired by XML -->
+	<bean id="proxyDAO"  class="com.hibernate.base.service.impl.SerivceProxyDAOImpl" >
+	<!--    <property name="target" ref="targetDB" />-->
+
+	  <property name="categoryDAO" ref="categoryDAO" /> 
+		
+	</bean>  
+  
+	<bean id="categoryDAO" class="com.hibernate.one.to.many.dao.CategoryDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	</beans>

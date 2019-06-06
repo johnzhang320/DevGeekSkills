@@ -1,0 +1,46 @@
+Selling Machine design
+
+* Requirements
+
+You need to design a selling Machine which could be worked as Vendor Machine for Drink or Coffee Machine for Coffee
+Detail description:
+1. Accepts coins of 1,5,10,25 ,100 Cents  i.e. penny, nickel, dime, and quarter.dollar
+2. For Vendor Machine, allows user to select products Coke(25), Pepsi(35), Soda(45)
+2. For Coffee Machine, allows user to select products MOCHA(75), CUPPUCCINO(125),LATTE(,100);
+3. Allow user to take refund by canceling the request.
+4. Return selected product and remaining change if any
+5. Allow reset operation for vending machine supplier.
+
+* Implementation
+
+(1) Data Structure
+    Two kind of Basic data: products and coins
+    In selling machine , there are those two types of inventory, for other selling machine maybe more 
+    Design inventory base Map<T,Integer>, T is products and Integer is amount of products or coins
+    
+(2) Architect
+    SellingMachine is interface which contains API
+    SellingMachineImpl contains inventory, 
+    currentBalance is current dollar amount in this selling machine for change, once sold one item, add item.getPrice()
+    once return or refund, reduce this dollar amount of item from currentBalance
+    totalSales is added by item.price.
+    getChange return the pair class contain <product.getName, List<Coin>>
+    
+(3) Design product interface with name and price
+    Design enum Drink and Coffee implements product interface , use this interface into entry of inventory
+              
+(4) Design Coin with name and denomination 
+(5) Algorithm for Change
+   signature: boolean getChange(List<Coin> changes), user must provide empty List<coin> before calling it
+   long amount = currentBalance - currentItem.getPrice();
+   using amount comparing largest denomination coin to smaller denomination 
+   
+ * Design Pattern and Scalable
+   Apply Factory pattern for coffee machine and drink machine
+   SellingMachine is return interface of the factory
+   SellingMachineImpl is abstact class which must be extended and initialized by concrete classes such as ConffeeMachine class
+   or VendorMachine Class
+   Inventory parameter class can be scalable not only for product or coin , can be more
+   
+     
+   

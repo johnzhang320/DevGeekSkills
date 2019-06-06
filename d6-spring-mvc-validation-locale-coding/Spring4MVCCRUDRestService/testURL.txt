@@ -1,0 +1,21 @@
+run mavel install
+copy target/Spring4MVCCRUDRestService folder to tomcat webapp\
+using Postman
+GET & http://localhost:8080/Spring4MVCCRUDRestService/user/           -- GET , list all users
+GET & http://localhost:8080/Spring4MVCCRUDRestService/user/           -- GET , list user/1
+POST & http://localhost:8080/Spring4MVCCRUDRestService/user/           --POST , create user
+{
+    "id": 6,
+    "name": "john zhang",
+    "age": 31,
+    "salary": 175000
+ }
+DELETE & http://localhost:8080/Spring4MVCCRUDRestService/user/1        -- DELETE , delete user 1
+PUT & http://localhost:8080/Spring4MVCCRUDRestService/user/            -- PUT , change user users
+
+{
+  "id": 6,
+  "name": "Dennie Cha",
+  "age": 41,
+  "salary": 145000
+} 

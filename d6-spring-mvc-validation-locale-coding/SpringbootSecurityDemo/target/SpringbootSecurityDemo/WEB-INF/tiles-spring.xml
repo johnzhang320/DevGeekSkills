@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">       
+<tiles-definitions>
+
+	<!-- =======================================================   
+	  Master definition  									 
+	  =======================================================  -->
+   
+   <definition name="spring.simpleLayout" template="/WEB-INF/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />	 
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 
+	
+    <definition name="spring.popoutLayout" template="/WEB-INF/jsp/common/PopoutLayout.jsp">
+	  	<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />	 
+	</definition> 
+	
+   <definition name="spring.leftMenuLayout" template="/WEB-INF/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/leftMenu.jsp" />	 
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 	
+    <definition name="spring.leftMenuWiderLayout" template="/WEB-INF/jsp/common/SpringLeftMenuWiderLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/leftMenu.jsp" />	 
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" /> 
+	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 	
+	<!-- =======================================================   
+	     Child definitions 									 
+	     =======================================================  -->
+
+	<definition name="MasterDetailRow" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/ng-grid/masterDetailRowSelection.jsp" />
+ 	</definition>
+
+	<definition name="AgentSignup" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentSignup.jsp" />
+ 	</definition>
+ 	<definition name="DmarcReports" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/DmarcReports.jsp" />
+ 	</definition>
+ 	<definition name="OAuth2" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/OAuth2.jsp" />
+ 	</definition>
+ 	<definition name="AgentLogin" extends="spring.leftMenuWiderLayout">
+ 	    <put-attribute name="Right" value="/WEB-INF/jsp/common/AgentRightSideBar.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentLogin.jsp" />		 
+ 	</definition>
+ 	<definition name="HelpAgentSignup" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/help/HelpAgentSignup.jsp" />
+ 	</definition>
+ 	<definition name="HelpDmarcReport" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/ng-grid/masterDetailRowSelection.jsp" />
+ 	</definition>
+ 	<definition name="HelpAgentLogin" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/help/HelpAgentLogin.jsp" />
+ 	</definition>
+	<definition name="AgentSignupSuccess" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentSignupSuccess.jsp" />
+ 	</definition> 	
+ 	<definition name="AgentLoginSuccess" extends="spring.leftMenuWiderLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentLoginSuccess.jsp" />
+ 	</definition>
+</tiles-definitions>

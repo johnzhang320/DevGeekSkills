@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+
+	<!--  <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>-->
+	
+    <context:annotation-config/>
+    
+	 <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.ResourceBundleViewResolver">                    
+        <property name="basename" value="spring-views"/>
+       
+    </bean>
+    
+ <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5242880" />
+    </bean>
+ 	
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-spring.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="mappings">
+             <props>
+           	      <prop key="/userLogin.html">UserLoginController</prop>
+           	      <prop key="/userSignup.html">UserSignupController</prop>
+           	      <prop key="/userPasswordForget.html">UserPasswordForgetController</prop>
+    			  <prop key="/userReviewQuote.html">UserController</prop>
+                  <prop key="/userProcessQuote.html">UserController</prop>
+                  <prop key="/userLogout.html">UserController</prop>
+
+         	      <prop key="/agentLogin.html">AgentLoginController</prop>    
+         	           	    
+           	      <prop key="/agentPasswordForget.html">AgentController</prop>
+           	      <prop key="/agentLogout.html">AgentController</prop>
+           	      <prop key="/agentPasswordForgetProcess.html">AgentController</prop>
+           	      
+         	      <prop key="/agentSignup.html">AgentSignupController</prop>  
+         	      <prop key="/agentSignupProcess.html">AgentController</prop>        	      
+         	    
+         	      <prop key="/agentNicheProgram.html">AgentController</prop> 
+       	          <prop key="/agentEnterRate.html">AgentController</prop> 
+                  <prop key="/agentEmailMarketing.html">AgentController</prop> 
+                  <prop key="/agentRelpyQuoteLogin.html">AgentController</prop> 
+                  
+                  <prop key="/rateSaveSuccess.html">AgentController</prop> 
+                  <prop key="/agentAdPage.html">AgentAdController</prop> 
+                  <prop key="/generateAgentEmail.html">GenerateAgentEmailController</prop> 
+                  
+         	      <prop key="/agentReviewQuote.html">AgentController</prop>                
+                  <prop key="/agentProcessQuote.html">AgentController</prop>      
+         	     
+         	       <prop key="/emailUserGuides.html">emailUserGuidesController</prop>
+         	       
+                   <prop key="/homePage.html">homePageController</prop>
+                     
+                   <prop key="/getAgentPicture.html">AgentController</prop> 
+                   <prop key="/getLoginAgentPicture.html">AgentController</prop> 
+                   <prop key="/getAgentInfo.html">AgentController</prop> 
+                      
+                   <prop key="/agentProcessQuotePurchOnLine.html">AgentController</prop> 
+                   <prop key="/agentProcessQuoteRefiOnLine.html">AgentController</prop> 
+             
+                   <prop key="/previewPicture.html">AgentController</prop>    
+                   
+                   <prop key="/downLoadAppForm.html">AgentController</prop>    
+                   
+                    <prop key="/getApplicationFormByte.html">AgentController</prop>    
+                   
+                   <prop key="/downloadApplicationForm.html">DownloadApplicationFormControl</prop>
+                     
+                   <prop key="/viewEmailSendStatus.html">EmailMultipleController</prop>    
+                    
+                   <prop key="/rateSheetForm.html">RateSheetController</prop>    
+                   <prop key="/rateSaveSuccess.html">RateSaveSuccessController</prop>    	
+                         
+         	       <prop key="/processReteSheetForm.html">RateSheetController</prop>           	 
+                   <prop key="/viewReteSheetAd.html">RateSheetController</prop>    	
+                   
+                   <prop key="/emailMarketing.html">EmailMarketingController</prop>    	   
+                   
+                   <prop key="/emailMarketing.html">EmailMarketingController</prop>    	   
+                   
+                   
+                   <prop key="/configureEmailServer.html">ConfigureEmailServerController</prop>  
+                     	         
+                 
+                   <prop key="/uploadDocFile.html">UploadDocFileController</prop>  
+                   <prop key="/nicheListView.html">NicheListViewController</prop>  
+                   <prop key="/nicheIntroSave.html">NicheListViewController</prop>    
+                   <prop key="/nicheForm.html">NicheFormController</prop>  
+                   <prop key="/nicheSelected.html">NicheListViewController</prop>  
+                   
+                   <prop key="/appCheckListForm.html">AppCheckListFormController</prop>  
+                   <prop key="/appCheckListView.html">AppCheckListViewController</prop>  
+                   
+                   <prop key="/uploadAttachment.html">UploadAttachmentController</prop>  
+                   <prop key="/uploadImage.html">UploadImageController</prop>  
+                   
+                   <prop key="/sendEmailDialog.html">SendEmailDialogController</prop>  
+                  
+                   <prop key="/getRemainBalance.html">loanCalculatorController</prop>
+                   <prop key="/getRefiRemainBalance.html">AgentController</prop>
+                 
+                   <prop key="/purchaseQuote.html">purchaseQuoteController</prop>                   
+                   <prop key="/refinanceQuote.html">refinanceQuoteController</prop>
+                
+                   <prop key="/calculator.html">calculatorController</prop>
+                   <prop key="/fetchDynamicRate.html">calculatorController</prop>
+                   <prop key="/calculateMonthlyExpense.html">loanCalculatorController</prop>      
+                   
+                   <prop key="/index.html">loanCalculatorController</prop>           
+                   
+                   <prop key="/calculateMonthlyExpenseOnline.html">loanCalculatorController</prop>
+           
+                   <prop key="/calculateMonthlyExpenseDialog.html">loanCalculatorController</prop>
+                   
+             	    <prop key="/affordableDialog.html">loanCalculatorController</prop>             
+           
+                   <prop key="/affordableHomePrice.html">loanCalculatorController</prop>              
+                   <prop key="/affordableHomePriceOnline.html">loanCalculatorController</prop>
+           
+                   
+                   <prop key="/monthlyAmortOnline.html">loanCalculatorController</prop>
+                   <prop key="/monthlyAmortization.html">loanCalculatorController</prop>
+                   <prop key="/monthlyAmortPDF.html">loanCalculatorController</prop>
+                    
+                   <prop key="/yearlyAmortOnline.html">loanCalculatorController</prop>
+                   <prop key="/yearlyAmortization.html">loanCalculatorController</prop>
+                   <prop key="/yearlyAmortPDF.html">loanCalculatorController</prop>
+                   <prop key="/compareRefinanceLoans.html">loanCalculatorController</prop>
+                   <prop key="/compareRefinanceLoansDialog.html">loanCalculatorController</prop>
+                   
+                   <prop key="/compareRefiOnLine.html">loanCalculatorController</prop>
+                   <prop key="/comparePurchaseLoans.html">loanCalculatorController</prop>                   
+                   <prop key="/comparePurchaseLoansDialog.html">loanCalculatorController</prop>
+                   
+                   <prop key="/comparePurchOnLine.html">loanCalculatorController</prop>
+           
+                   <prop key="/preparation.html">preparationController</prop>
+                   
+                   <prop key="/creditReportWebsite.html">CreditReportWebsiteControl</prop>
+                    
+                   <prop key="/comparison.html">comparisonController</prop>
+                    
+                   <prop key="/amortization.html">amortizationController</prop>
+                   <prop key="/education.html">educationController</prop>
+                   <prop key="/californiaLoan.html">californiaLoanController</prop>
+                   
+                    <prop key="/loanOptions.html">loanOptionsController</prop>
+                    <prop key="/applyLoanDocument.html">applyLoanDocumentController</prop> 
+                    <prop key="/loadAgentPicture.html">loadAgentPictureController</prop>
+                    <prop key="/pageOnConstruction.html">PageOnConstructionController</prop>
+                    
+                    
+                    <prop key="/purchaseQuoteEmail.html">purchaseQuoteEmailController</prop>
+                    
+                    <prop key="/refinanceQuoteEmail.html">refinanceQuoteEmailController</prop>
+                   
+                    <prop key="/agentDataForm.html">AgentDataFormController</prop>      
+                    
+                    <prop key="/quotePullForm.html">QuotePullFormController</prop>      
+                   
+                    <prop key="/quotePullChildForm.html">QuotePullChildFormController</prop>      
+                 
+                    <prop key="/appCheckListPullForm.html">AppCheckListPullFormController</prop>     
+                    
+                    <prop key="/websiteHelp.html">WebsiteHelpController</prop>     
+                    <prop key="/forgetPassword.html">ForgetPasswordController</prop>
+                    <prop key="/resetPassword.html">ResetPasswordController</prop>
+                    <prop key="/saveEmailSubject.html">GenerateAgentEmailController</prop>   
+                    <prop key="/agentReplyQuote.html">AgentReplyQuoteController</prop>    	
+                    <prop key="/bulkEmailSender.html">BulkEmailSenderController</prop>     
+                    <prop key="/generateCertPicCode.html">AgentController</prop>    
+                    <prop key="/helpAgentEmailMarket.html">HelpAgentEmailMarketController</prop>   
+                    <prop key="/helpAgentReplyQuote.html">HelpAgentReplyQuoteController</prop>   
+                    <prop key="/websiteFeatures.html">WebsiteFeaturesController</prop>   
+                    <prop key="/fetchCertPicCode.html">AgentController</prop>  
+                    <prop key="/termAndAgreement.html">TermAndAgreementController</prop>
+             </props>  
+             
+         </property>  	 
+     </bean>  	 
+
+ <!-- controller -->
+   <!--    <bean id="filesForm" class="com.loan.agent.mvc.formbean.FilesForm">
+        <property name="filesService" ref="filesService"/>
+    </bean>
+ 
+  <bean id="filesController" class="com.loan.agent.mvc.controller.FilesController">
+        <property name="filesService" ref="filesService"/>
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.InternalPathMethodNameResolver">
+                <property name="mappings">
+                    <props>
+                        <prop key="/upload.html">upload</prop>
+                        <prop key="/download.html">download</prop>
+                        <prop key="/delete.html">delete</prop>
+                    </props>
+                </property>
+            </bean>
+        </property>
+    </bean>
+-->
+	
+	 <bean id="purchaseQuoteController" class="com.loan.agent.mvc.controller.PurchaseQuoteController" >
+    	<property name="formView" value="PurchaseQuote" /> 		 
+		<property name="successView" value="PurchaseQuoteSuccess" />	
+		<property name="quoteDBService" ref="QuoteDBService"/>
+    </bean>   
+    
+    
+ 	 
+     <bean id="refinanceQuoteController" class="com.loan.agent.mvc.controller.RefinanceQuoteController" >
+   		 <property name="formView" value="RefinanceQuote" /> 		 
+		<property name="successView" value="RefinanceSuccess" />	
+		 <property name="quoteDBService" ref="QuoteDBService"/>
+    </bean>  
+  
+   <!-- <property name="successView" value="RefinanceQuoteSuccess" /> -->
+   
+   <bean id="agentValidator" class="com.loan.mvc.validator.AgentValidator" />
+   
+   <bean id="emailValidator" class="com.loan.mvc.validator.EmailValidator" />
+   
+   <bean id="userValidator" class="com.loan.mvc.validator.UserValidator" />
+    
+
+	
+	<bean id="AgentLoginController" class="com.loan.agent.mvc.controller.AgentLoginController">
+		<property name="formView" value="AgentLogin" /> 	
+		<property name="validator" ><ref bean="agentValidator" /></property>	 
+		<property name="successView" value="AgentLoginSuccess" />	
+	</bean> 
+		
+	<bean id="ForgetPasswordController" class="com.loan.agent.mvc.controller.ForgetPasswordController">
+		<property name="formView" value="ForgetPassword" /> 	
+		<property name="validator" ><ref bean="emailValidator" /></property>	 
+		<property name="successView" value="ForgetPasswordSuccess" />	
+	</bean> 
+	<bean id="ResetPasswordController" class="com.loan.agent.mvc.controller.ResetPasswordController">
+		<property name="formView" value="ResetPassword" /> 			 
+		<property name="successView" value="ResetPasswordSuccess" />	
+	</bean> 
+		
+	<bean id="AgentSignupController" class="com.loan.agent.mvc.controller.AgentSignupController">
+		<property name="formView" value="AgentSignup" /> 	
+		<property name="successView" value="AgentSignupSuccess" />	 
+	</bean> 
+	
+	<bean id="EmailMarketingController" class="com.loan.agent.mvc.controller.EmailMarketingController">
+		<property name="formView" value="EmailMarketing" /> 	
+		<property name="successView" value="EmailSendSuccess" />	 
+	</bean> 
+	<bean id="AgentReplyQuoteController" class="com.loan.agent.mvc.controller.AgentReplyQuoteController">
+		<property name="formView" value="AgentReplyQuote" /> 	
+		<property name="successView" value="AgentReplyQuoteSuccess" />	 
+	</bean> 
+	
+	<bean id="BulkEmailSenderController" class="com.loan.agent.mvc.controller.BulkEmailSenderController">
+		<property name="formView" value="BulkEmailSender" /> 	
+		<property name="successView" value="BulkEmailSenderSuccess" />	 
+	</bean>
+		
+	<bean id="ConfigureEmailServerController" class="com.loan.agent.mvc.controller.ConfigureEmailServerController">
+		<property name="formView" value="ConfigureEmailServer" /> 	
+		<property name="successView" value="ConfigureEmailServerSuccess" />	 
+	</bean> 
+	
+	<bean id="DoEmailListController" class="com.loan.agent.mvc.controller.DoEmailListController">
+		<property name="formView" value="DoEmailList" /> 	
+		<property name="successView" value="DoEmailListSuccess" />	 
+	</bean> 
+	<bean id="UploadDocFileController" class="com.loan.agent.mvc.controller.UploadDocFileController">
+		<property name="formView" value="UploadDocFile" /> 	
+		<property name="successView" value="UploadDocFileSuccess" />	 
+	</bean> 
+	<bean id="NicheFormController" class="com.loan.agent.mvc.controller.NicheFormController">
+		<property name="formView" value="NicheForm" /> 	
+		<property name="successView" value="NicheFormSuccess" />	 
+	</bean> 
+
+	<bean id="AgentDataFormController" class="com.loan.agent.mvc.controller.AgentDataFormController">
+		<property name="formView" value="AgentDataForm" /> 	
+		<property name="successView" value="AgentDataFormSuccess" />	 
+	</bean> 	
+	<bean id="QuotePullFormController" class="com.loan.agent.mvc.controller.QuotePullFormController">
+		<property name="formView" value="QuotePullForm" /> 	
+		<property name="successView" value="QuotePullFormSuccess" />	 
+	</bean> 	
+	<bean id="AppCheckListPullFormController" class="com.loan.agent.mvc.controller.AppCheckListPullFormController">
+		<property name="formView" value="AppCheckListPullForm" /> 	
+		<property name="successView" value="AppCheckListPullFormSuccess" />	 
+	</bean> 	
+	<bean id="QuotePullChildFormController" class="com.loan.agent.mvc.controller.QuotePullChildFormController">
+		<property name="formView" value="QuotePullChildForm" /> 	
+		<property name="successView" value="QuotePullChildFormSuccess" />	 
+	</bean> 	
+	
+	 <bean id="NicheListViewController" class="com.loan.agent.mvc.controller.NicheListViewController">
+ 		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+	 </bean>  
+	  <bean id="AppCheckListViewController" class="com.loan.agent.mvc.controller.AppCheckListViewController">
+ 		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+	 </bean>  
+   <bean id="AppCheckListFormController" class="com.loan.agent.mvc.controller.AppCheckListFormController">
+		<property name="formView" value="AppCheckListForm" /> 	
+		<property name="successView" value="AppCheckListSuccess" />	 
+	</bean> 
+	<bean id="UploadAttachmentController" class="com.loan.agent.mvc.controller.UploadAttachmentController">
+		<property name="formView" value="UploadAttachment" /> 	
+		<property name="successView" value="UploadAttachmentSuccess" />	 
+	</bean> 
+	
+	<bean id="UploadImageController" class="com.loan.agent.mvc.controller.UploadImageController">
+		<property name="formView" value="UploadImage" /> 	
+		<property name="successView" value="UploadImageSuccess" />	 
+	</bean> 
+	<bean id="SendEmailDialogController" class="com.loan.agent.mvc.controller.SendEmailDialogController">
+		<property name="formView" value="SendEmailDialog" /> 	
+		<property name="successView" value="SendEmailDialogSuccess" />	 
+	</bean> 
+
+	<bean name="WebsiteHelpController" class="com.loan.agent.mvc.controller.WebsiteHelpController">  	 
+ 	<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/> 
+ 	</bean>	
+ 		 
+	<bean id="AgentAdController" class="com.loan.agent.mvc.controller.AgentAdController">
+		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/> 
+	</bean> 
+	 
+	<bean id="GenerateAgentEmailController" class="com.loan.agent.mvc.controller.GenerateAgentEmailController">
+		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/> 
+	</bean> 	
+   <bean name="purchaseQuoteEmailController" class="com.loan.agent.mvc.controller.GenerateAgentEmailController">  	 
+ 			<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/> 
+ 	</bean>
+ 	<bean name="refinanceQuoteEmailController" class="com.loan.agent.mvc.controller.GenerateAgentEmailController">  	 
+ 			<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/> 
+ 	</bean>	
+	<bean id="RateSheetController" class="com.loan.agent.mvc.controller.RateSheetController">
+		<property name="formView" value="RateSheetForm" /> 	
+		<property name="successView" value="RateSaveSuccessRedirect" />	 
+	</bean> 
+	<bean name="DownloadApplicationFormControl" class="com.loan.agent.mvc.controller.DownloadApplicationFormController">  	 
+ 		<property name="formView" value="DownloadApplicationForm" /> 	
+		<property name="successView" value="DownloadApplicationFormSuccess" />		 
+ 	</bean>
+	<bean id="UserLoginController" class="com.loan.agent.mvc.controller.UserLoginController">
+		<property name="formView" value="UserLogin" /> 
+		<property name="validator" ><ref bean="userValidator" /></property>	 
+	</bean> 
+	<bean id="UserSignupController" class="com.loan.agent.mvc.controller.UserSignupController">
+  		<property name="formView" value="UserSignup" />
+		<property name="successView" value="LoginSuccess" />
+	</bean> 
+
+	<bean id="UserPasswordForgetController" class="com.loan.agent.mvc.controller.UserSignupController">
+		<property name="formView" value="UserPasswordForget" />
+		<property name="successView" value="LoginSuccess" />
+	</bean> 
+	 
+	 <bean id="AgentController" class="com.loan.agent.mvc.controller.AgentController">
+ 		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+	 </bean> 
+
+     <bean id="EmailMultipleController" class="com.loan.agent.mvc.controller.EmailMultipleController">
+ 		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+	 </bean> 
+	 
+
+ 		 
+ 	 <bean id="UserController" class="com.loan.agent.mvc.controller.UserController">
+ 		<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+	 </bean> 
+	 
+     <!--SuccessViewController extends org.springframework.web.servlet.mvc.ParameterizableViewController
+	     Redirect to successful page to avoid user go back form or refresh form to submit it again if still use forward internally
+	     viewName is tile name or resolved jsp name
+	     message is succeeded form information
+	     in this controller , call utility.setRequest(request,reponse) to initialize the Advertisement again
+	     
+	  -->
+	 	
+	 <bean name="RateSaveSuccessController" class="com.loan.agent.mvc.controller.RedirectController">  	
+   		<property name="viewName" value="RateSaveSuccess" />  	
+   		<property name="message" value="Interest Rates have been saved successfully" />   		
+    </bean> 	 	
+	 
+	 
+	
+	 
+<!-- Calculator based on ParameterMethodNameResolver as below, for example
+    calling monthlyAmortization using calculator/any.html?action=monthlyAmortization -->
+
+ 
+ <bean id="loanCalculatorController" class="com.loan.agent.mvc.controller.CalculatorController">
+ 	<property name="methodNameResolver" ref="InternalPathMethodNameResolver"/>
+ </bean>
+ 
+    
+	<bean id="InternalPathMethodNameResolver" 
+	     class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver">
+	  	<property name="suffix" value="Handler" />
+	</bean>
+     
+     
+   <bean name="agentAdPageController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="AgentAdPage" />  	 
+ 	</bean>
+	
+	 
+	<bean name="calculatorController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="Calculator" />  	 
+ 	</bean>	 
+ 	
+ 	<bean name="amortizationOnlineReportController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="AmortizationOnlineReport" />  	 
+ 	</bean>
+ 	
+	<bean name="preparationController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="Preparation" />  	 
+ 	</bean>
+ 	
+ 	<bean name="CreditReportWebsiteControl" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="CreditReportWebsite" />  	 
+ 	</bean>
+ 	
+ 
+ 	
+ 	<bean name="PageOnConstructionController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="PageOnConstruction" />  	 
+ 	</bean>
+ 	
+	<bean name="comparisonController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="Comparison" />  	 
+ 	</bean>
+	<bean name="amortizationController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="Amortization" />  	 
+ 	</bean>
+ 	
+ 	
+ 	<bean name="educationController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="Education" />  	 
+ 	</bean>
+ 
+ 	
+ 	<bean name="californiaLoanController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="CaliforniaLoan" />  	 
+ 	</bean>
+ 	
+ 	<bean name="loanOptionsController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="LoanOptions" />  	 
+ 	</bean>
+ 	
+ 	<bean name="applyLoanDocumentController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="ApplyLoanDocument" />  	 
+ 	</bean>
+ 	
+ 	<bean name="loadAgentPictureController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="LoadAgentPicture" />  	 
+ 	</bean>
+    <bean name="CProgressBarController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="CProgressBar" />  	 
+ 	</bean>	
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="hl"/>
+	</bean>
+   <bean name="emailUserGuidesController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="emailUserGuides" />  	 
+ 	</bean>
+ 	
+ 	 <bean name="TermAndAgreementController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="TermAndAgreement" />  	 
+ 	</bean>
+ 	
+ 	
+ 	<bean name="HelpAgentEmailMarketController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="HelpAgentEmailMarket" />  	 
+ 	</bean>
+ 	
+	<bean name="HelpAgentReplyQuoteController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="HelpAgentReplyQuote" />  	 
+ 	</bean> 	
+	
+	<bean name="WebsiteFeaturesController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="WebsiteFeatures" />  	 
+ 	</bean> 	
+ 	
+ 	  <bean name="homePageController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">  	 
+ 		<property name="viewName" value="HomePage" />  	 
+ 	</bean>
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/> 
+	
+</beans>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">       
+<tiles-definitions>
+
+	<!-- =======================================================  -->
+	<!-- Master definition  									-->
+	<!-- =======================================================  -->
+
+	<!-- Doc index page description  -->
+
+
+		<definition name="spring.mainLayout" template="/WEB-INF/jsp/common/springLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+		<put-attribute name="adbox" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+		<put-attribute name="Right" value="/WEB-INF/jsp/common/RegularRightSideBar.jsp" />
+ 	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition>
+	
+   
+   <definition name="spring.simpleLayout" template="/WEB-INF/jsp/common/SpringLayout2.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />	 
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+		<put-attribute name="adbox" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 
+	
+	<definition name="spring.resultLayout" template="/WEB-INF/jsp/common/SpringResultLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+	    <put-attribute name="Right" value="/WEB-INF/jsp/common/RegularRightSideBar.jsp" />
+	    <put-attribute name="adbox" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/common/blankBody.jsp" />
+ 	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 
+ 
+	
+	<definition name="spring.resultLayoutDialog" template="/WEB-INF/jsp/common/SpringResultLayoutDialog.jsp">		 
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+		<put-attribute name="Right" value="/WEB-INF/jsp/common/RegularRightSideBar.jsp" />	 
+		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/common/blankBody.jsp" /> 	  
+	</definition> 
+	
+	<definition name="spring.frameLayout" template="/WEB-INF/jsp/common/SpringFrameLayout.jsp">
+	  	<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+	  	<put-attribute name="adbox" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/common/blankBody.jsp" /> 	 
+	</definition> 
+	<definition name="spring.popoutLayout" template="/WEB-INF/jsp/common/PopoutLayout.jsp">
+	  	<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />	 
+	</definition> 
+	
+	<definition name="spring.nosideBarResultLayout" template="/WEB-INF/jsp/common/NoSideBarSpringResultLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/common/blankBody.jsp" />
+		<put-attribute name="adbox" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/common/blankBody.jsp" />
+ 	 	<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition> 
+	
+	<definition name="PurchaseQuote" extends="spring.mainLayout">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="body" value="/WEB-INF/jsp/form/PurchaseQuote.jsp?left_capture=LeftArea_Caption_Purchase_Quote_P1.png" />
+ 	</definition>
+ 	
+ 	<definition name="UserLogin" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/UserLogin.jsp?userAction=login" />
+ 	</definition>
+ 	
+ 	<definition name="PageOnConstruction" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/PageOnConstruction.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="ConfigureEmailServer" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/ConfigureEmailServer.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="DoEmailList" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/DoEmailList.jsp" />
+ 	</definition>
+ 
+ 	<definition name="QuotePullChildForm" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/QuotePullChildForm.jsp" />
+ 	</definition>
+ 
+   <definition name="EmailUserGuides" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/common/emailUserGuides.jsp" />
+ 	</definition>
+
+   <definition name="TermAndAgreement" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/docs/Term-and-Agreement.jsp" />
+ 	</definition>
+ 
+ 	<definition name="UploadDocFile" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/UploadDocFile.jsp" />
+ 	</definition>	
+ 	<definition name="NicheForm" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/NicheForm.jsp" />
+ 	</definition>
+ 
+ 	<definition name="AppCheckListForm" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AppCheckListForm.jsp" />
+ 	</definition>
+ 			
+ 	<definition name="UploadAttachment" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/common/UploadAttachment.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="UploadImage" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/common/UploadImage.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="SendEmailDialog" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/common/SendEmailDialog.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="GenerateAgentEmail" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/GenerateAgentEmail.jsp" />
+ 	</definition>
+ 	 
+  	<definition name="PurchaseQuoteEmail" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/PurchaseQuoteEmail.jsp" />
+ 	</definition>
+ 
+  	<definition name="RefinanceQuoteEmail" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/RefinanceQuoteEmail.jsp" />
+ 	</definition>			
+ 			
+  	<definition name="CreateEmailList" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/CreateEmailList.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="UserSignup" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/UserLogin.jsp?userAction=signup" />
+ 	</definition>
+ 	<definition name="UserPasswordForget" extends="PurchaseQuote">
+ 	   <put-attribute name="Right" value="/WEB-INF/jsp/common/AgentRightSideBar.jsp" />
+	   <put-attribute name="body" value="/WEB-INF/jsp/form/UserLogin.jsp?userAction=forget" />
+ 	</definition>
+ 	
+ 	<definition name="AgentLogin" extends="PurchaseQuote">
+ 	    <put-attribute name="Right" value="/WEB-INF/jsp/common/AgentRightSideBar.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentLogin.jsp" />		 
+ 	</definition>
+ 	
+ 	 
+ 	
+ 	<definition name="AgentSignup" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentSignup.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="AgentReplyQuote" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentReplyQuote.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="BulkEmailSender" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/BulkEmailSender.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="EmailMarketing" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/EmailMarketing.jsp" />
+ 	</definition>
+ 	
+    <definition name="ForgetPassword" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/ForgetPassword.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="ResetPassword" extends="spring.simpleLayout">
+ 	     <put-attribute name="Right" value="/WEB-INF/jsp/common/AgentRightSideBar.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/form/ResetPassword.jsp" />
+ 	</definition>
+ 
+    <definition name="ForgetPasswordSuccess" extends="spring.popoutLayout">
+      
+		<put-attribute name="body" value="/WEB-INF/jsp/form/ForgetPasswordSuccess.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="ResetPasswordSuccess" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/ResetPasswordSuccess.jsp" />
+ 	</definition>
+ 		
+ 	<definition name="RateSheetForm" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/RateSheetForm.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="rateSaveSuccess" extends="spring.simpleLayout">
+	    <put-attribute name="body" value="/WEB-INF/jsp/form/RateSaveSuccess.jsp" />
+    </definition>
+ 	
+ 	<definition name="AgentAdPage" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentAdPage.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="RateSaveSuccess" extends="spring.simpleLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/RateSaveSuccess.jsp" />
+ 	</definition>
+ 	
+ 	
+ 	<definition name="LoginSuccess" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/LoginSuccess.jsp?left_capture=LeftArea_Welcome.png" />
+ 	</definition>
+ 	
+ 	<definition name="AgentSignupSuccess" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentSignupSuccess.jsp?left_capture=LeftArea_Welcome.png" />
+ 	</definition>
+ 	
+ 	<definition name="AppCheckListPullForm" extends="spring.popoutLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/AppCheckListPullForm.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="PurchasePageTwoQuote" extends="PurchaseQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/UserPersonal.jsp?left_capture=LeftArea_Caption_Purchase_Quote_P2.png" />
+ 	</definition>
+ 	
+ 	<definition name="RefinanceQuote" extends="spring.mainLayout">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+		<put-attribute name="body" value="/WEB-INF/jsp/form/RefinanceQuote.jsp?left_capture=LeftArea_Caption_Refinance_Quote_P1.png" />
+ 	</definition>
+ 	
+ 	<definition name="RefinancePageTwoQuote" extends="RefinanceQuote">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/UserPersonal.jsp?left_capture=LeftArea_Caption_Refinance_Quote_P2.png" />
+ 	</definition>
+ 	<definition name="PurchaseQuoteSuccess" extends="spring.mainLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/PurchaseQuoteSuccess.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="RefinanceQuoteSuccess" extends="spring.mainLayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/form/RefinanceQuoteSuccess.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="Calculator" extends="spring.simpleLayout">
+   		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Calculator.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/Calculator.jsp" />
+ 	</definition>	
+ 
+   <definition name="HomePage"  extends="spring.simpleLayout">
+    	<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/WebsiteFeatures.jsp" />
+ 	</definition>	
+ 	
+ 	
+ 	<definition name="CalculateMonthlyExpense" extends="Calculator">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/CalculateMonthlyExpense.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="CalculateMonthlyExpense" extends="Calculator">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/CalculateMonthlyExpense.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="AffordableHomePrice" extends="Calculator">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/AffordableHomePrice.jsp" />
+ 	</definition>
+ 	
+ 	 
+ 	
+ 	<definition name="Amortization" extends="spring.simpleLayout">
+ 	 	<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Amortization.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/Amortization.jsp" />
+ 	</definition>
+ 	<definition name="MonthlyAmortization" extends="Amortization"> 	   
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/MonthlyAmortization.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="YearlyAmortization" extends="Amortization">
+ 	   
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/YearlyAmortization.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="Preparation" extends="spring.simpleLayout">
+  		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Preparation.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/Preparation.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="CreditReportWebsite" extends="Preparation">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/CreditReportWebsite.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="DownloadApplicationForm" extends="Preparation">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/DownloadApplicationForm.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="Comparison" extends="spring.resultLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Comparison.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/CompareRefinanceLoans.jsp" /> 	 
+ 		<put-attribute name="Right" value="/WEB-INF/jsp/common/CompareLoansSideBar.jsp" />
+ 		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultCompareLoan.jsp" />
+ 	</definition>
+  		
+ <definition name="CompareRefinanceLoans" extends="Comparison"> 
+      
+ </definition>
+ 
+ 	
+ 
+  <definition name="ComparePurchaseLoans" extends="Comparison">
+       <put-attribute name="body" value="/WEB-INF/jsp/form/ComparePurchaseLoans.jsp" />
+ </definition>	
+ 
+ 	<definition name="ComparisonDialog" extends="spring.resultLayoutDialog">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/CompareRefinanceLoans.jsp" />
+ 		<put-attribute name="Right" value="/WEB-INF/jsp/common/CompareLoansSideBar.jsp" />
+ 		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultCompareLoan.jsp" />
+ 	</definition>
+ 	
+ <definition name="CompareRefinanceLoansDialog" extends="ComparisonDialog"> 
+ 
+ </definition>
+ 
+ 	
+ 
+  <definition name="ComparePurchaseLoansDialog" extends="ComparisonDialog">
+  <put-attribute name="body" value="/WEB-INF/jsp/form/ComparePurchaseLoans.jsp" />
+ </definition>	 
+ 
+   <definition name="Education" extends="spring.simpleLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/Education.jsp" />
+ 	</definition>
+   <definition name="WebsiteHelp" extends="spring.simpleLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/WebsiteHelp.jsp" />
+ 	</definition>
+ 	
+   <definition name="WebsiteHelpPopout" extends="spring.popoutLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/WebsiteHelpPopout.jsp" />
+ 	</definition>	
+ 
+    <definition name="HelpAgentEmailMarket" extends="spring.popoutLayout">
+    	<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/HelpAgentEmailMarket.jsp" />
+ 	</definition>		
+ 	<definition name="HelpAgentReplyQuote" extends="spring.popoutLayout">
+    	<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/HelpAgentReplyQuote.jsp" />
+ 	</definition>		
+ 	
+  	<definition name="WebsiteFeatures" extends="spring.simpleLayout">
+    	<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/WebsiteFeatures.jsp" />
+ 	</definition>	
+ 		
+   <definition name="CaliforniaLoan" extends="spring.simpleLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/CaliforniaLoan.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="LoanOptions" extends="spring.simpleLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/LoanOptions.jsp" />
+ 	</definition>
+ 	
+ 	<definition name="ApplyLoanDocument" extends="spring.simpleLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_Education.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/ApplyLoanDocument.jsp" />
+ 	</definition>	
+ 	
+ 	<definition name="AgentProcessQuote" extends="spring.frameLayout">
+ 	 	<put-attribute name="body" value="/WEB-INF/jsp/form/AgentProcessQuote.jsp" />
+ 	 	<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultAgentProcessQuote.jsp" />
+ 	</definition>
+  
+ 	<definition name="AgentReviewQuote" extends="spring.popoutLayout">
+ 	 	<put-attribute name="body" value="/WEB-INF/jsp/form/AgentReviewQuote.jsp" />
+ 		 
+ 	</definition>
+ 	
+  	<definition name="NicheListView" extends="spring.nosideBarResultLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/NicheListView.jsp" /> 		
+ 		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultCompareLoan.jsp" /> 
+ 	</definition>
+ 
+  	<definition name="AgentDataForm" extends="spring.popoutLayout">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/AgentDataForm.jsp" /> 			 
+ 	</definition>
+ 	
+  	<definition name="QuotePullForm" extends="spring.popoutLayout">
+  		<put-attribute name="body" value="/WEB-INF/jsp/form/QuotePullForm.jsp" /> 			 
+ 	</definition>  
+   <definition name="AppCheckListView" extends="spring.nosideBarResultLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/AppCheckListView.jsp" /> 		
+ 		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultCompareLoan.jsp" /> 
+ 	</definition>
+ 	 	
+ 	<definition name="UserProcessQuote" extends="spring.frameLayout">
+ 	 	<put-attribute name="body" value="/WEB-INF/jsp/form/UserProcessQuote.jsp" />
+ 	 	<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultUserProcessQuote.jsp" />
+ 	</definition>
+  
+ 	<definition name="UserReviewQuote" extends="spring.nosideBarResultLayout">
+ 		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp?headerImage=mortgageLoanAgency_RateQuote.png" />
+ 		<put-attribute name="body" value="/WEB-INF/jsp/form/UserReviewQuote.jsp" />
+ 		<put-attribute name="ResultBottom" value="/WEB-INF/jsp/form/ResultCompareLoan.jsp" />
+ 	</definition>	
+ 	
+</tiles-definitions>

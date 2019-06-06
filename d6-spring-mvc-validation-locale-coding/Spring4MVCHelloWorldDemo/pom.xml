@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+    <groupId>com.websystique.springmvc</groupId>
+    <artifactId>Spring4MVCHelloWorldDemo</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <name>Spring4MVCHelloWorldDemo Maven Webapp</name>
+   <!--  
+    In C:\Users\John Zhang\.m2\repository\org\springframework spring version is 
+   4.1.4.RELEASE, we must change Spring version from 4.0.0.RELEASE to 4.1.4.RELEASE
+   in poi.xml  
+   otherwise code could not be compiled!!!!
+   -->
+    <properties>
+        <springframework.version>4.1.4.RELEASE</springframework.version>
+    </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+     <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+ 
+        <!-- Below declared dependencies are included for the servers who may complain about servlet/jstl missing dependency -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+  </dependencies>
+  <build>
+  <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    <finalName>Spring4MVCHelloWorldDemo</finalName>
+  </build>
+</project>
+<!-- 
+The Maven plugin maven-compiler-plugin has been added here to explicitly specify 
+the java-version we are going to use. Do note that it also force eclipse to respect 
+the jdk-version being used for the project. if it is not present, and you perform 
+mvn-update from within your eclipse, eclipse switches jdk-version back to 1.5 which 
+is annoying. So do add it in your project pom as well. 
+-->
+
+<!-- Note: In case you do not see the src/main/java and src/test/java folder in 
+your project structure, goto Project>Properties>Java BuildPath>Libraries, 
+select/change-to appropriate Java version, click ok, you should see those folders now.
+
+Note: With recent Eclipse versions you don’t need to use mvn eclise:eclipse anymore,
+ this functionality is built-in with m2e eclipse plugin. -->

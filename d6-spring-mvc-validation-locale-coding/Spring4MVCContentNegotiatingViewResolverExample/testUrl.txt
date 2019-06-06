@@ -1,0 +1,5 @@
+copy target/Spring4MVCContentNegotiatingViewResolverExample folder to tomcat webapp
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/spaggatti.json
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/spaggatti.xml
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/spaggatti.pdf
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/spaggatti.xls

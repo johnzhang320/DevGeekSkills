@@ -1,0 +1,16 @@
+	<div class="generic-container">
+		<h2>SellPoint - AngularJS UI-Router based Routing Application</h2>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+		    <div class="panel-heading"><span class="lead">All Categories</span></div>
+		    <div class="tablecontainer">
+				<ul>
+				  <li ng-repeat="category in ctgController.categories">{{item}}
+				  		<a ui-sref="category.list({categoryId:category})">{{category}}</a>
+				  </li>
+				</ul>
+			</div>
+		</div>
+	
+		<div ui-view></div>
+	</div>

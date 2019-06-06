@@ -1,0 +1,5 @@
+Salesforce OO Design Interview documentation 
+Implementation
+
+(1) Read first 36 lines into map<Character,String> stop at first *
+(2) 
