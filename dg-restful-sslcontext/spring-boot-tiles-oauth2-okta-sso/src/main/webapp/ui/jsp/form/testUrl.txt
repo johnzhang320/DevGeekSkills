@@ -1,0 +1,6 @@
+run maven install
+copy target/Spring4MVCHelloWorldRestServiceDemo folder to tomcat webapp
+http://localhost:8080/Spring4MVCHelloWorldRestServiceDemo/
+http://localhost:8080/Spring4MVCHelloWorldRestServiceDemo/json/johnzhang
+http://localhost:8080/Spring4MVCHelloWorldRestServiceDemo/xml/johnzhang
+

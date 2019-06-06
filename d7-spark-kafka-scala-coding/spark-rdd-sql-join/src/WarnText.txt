@@ -1,0 +1,12 @@
+Any time if Scala object is compiled error because POM.XML wrong
+Alert you 'Project xxxxx build error , do you want to continue ? 
+Remember 
+
+Never press 'Yes" to continue, Always "No" !!!!!!!
+
+Otherwise , any scala within this project could not find main method!!!!
+
+Only Create Scala file and copy content otherwise no run Scala Application !!!! fuck !!!!
+
+Copy Scala to current project , you must change package name because copying does not change
+old package, therefore the Scala Application would not popout
