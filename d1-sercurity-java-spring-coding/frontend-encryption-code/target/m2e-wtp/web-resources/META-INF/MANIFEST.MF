@@ -1,13 +1,11 @@
 Manifest-Version: 1.0
-Implementation-Title: password-credit-socialsecurity-frontend-encrypti
- on
+Implementation-Title: frontend-encryption-code
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: jianzhang
-Implementation-Vendor-Id: password-credit-socialsecurity-frontend-encr
- yption
+Implementation-Vendor-Id: frontend-encryption-code
 Build-Jdk: 1.8.0_181
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/password-credit-socialsecurity-frontend-encryption
+ ot-starter-parent/frontend-encryption-code
 Created-By: Maven Integration for Eclipse
 Main-Class: com.loan.agent.mvc.FrontendEncryptionApplication
 
