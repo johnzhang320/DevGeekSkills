@@ -1,0 +1,9 @@
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/model/Track.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/services/JSONService.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/services/MyJsonServer.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/model/Constants.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/model/Student.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/services/HelloWorldService.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/clients/JerseyClientGet.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/clients/JerseyClientPostClientConfigPojo.java
+/Users/jianzhang/JZWorkspace/RefinedDev/jersey-1.9-rest-service-and-clients/src/main/java/com/my/jersey/clients/JerseyClientPostMapperObject.java
