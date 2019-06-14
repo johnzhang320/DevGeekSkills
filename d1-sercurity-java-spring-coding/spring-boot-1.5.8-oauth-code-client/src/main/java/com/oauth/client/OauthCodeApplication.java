@@ -14,9 +14,9 @@ public class OauthCodeApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(OauthCodeApplication.class);
 	}
-	//server.port=8080
-	//localhost:8080/oauth_client/getDashboard
-	//localhost:8080/oauth_client/getBankAccount
+	//server.port=8082
+	//localhost:8082/oauth_client/getDashboard
+	//localhost:8082/oauth_client/getBankAccount
 	public static void main(String[] args) {
 		SpringApplication.run(OauthCodeApplication.class, args);
 		

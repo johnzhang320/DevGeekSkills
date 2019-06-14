@@ -41,6 +41,5 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 		.antMatchers("/user/**").access("hasRole('ADMIN')")
 		.and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
 	}
-   // /user is resource server path which must be provided access_token to get in, /user is path of @RestController top path /user
-   // in  HelloWorldRestController.java
+   
 }

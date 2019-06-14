@@ -14,8 +14,8 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
 public class OauthMasterApplication extends SpringBootServletInitializer {
-	//server.port=8080
-	// http://localhost:8080/oauth_master/home
+	//server.port=8081
+	// http://localhost:8081/oauth_master/home
     public static void main(String[] args) {
     	 SpringApplication.run(OauthMasterApplication.class);
 		  

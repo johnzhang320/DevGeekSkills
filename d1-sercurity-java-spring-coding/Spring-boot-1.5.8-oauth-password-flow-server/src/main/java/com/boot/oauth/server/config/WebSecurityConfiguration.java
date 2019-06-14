@@ -1,20 +1,23 @@
 package com.boot.oauth.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 //import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-/*import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 //import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
 import org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;*/
+import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 /**
  *   This is resource owner,  EndPoint http://localhost:8080/SpringSecurityOAuth2Example/oauth/token/?grant_type=password&username=bill&password=abc123  
  * 
@@ -41,8 +44,8 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-//	@Autowired
-//	private ClientDetailsService clientDetailsService;
+	@Autowired
+	private ClientDetailsService clientDetailsService;
 	
 	@Autowired
     public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
@@ -60,7 +63,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	  	.antMatchers("/oauth/token").permitAll();   // Endpoint /oauth/token is used to request a token [access or refresh].
     }
 
-/*    @Override
+    @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
@@ -88,6 +91,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		TokenApprovalStore store = new TokenApprovalStore();
 		store.setTokenStore(tokenStore);
 		return store;
-	}*/
+	}
 	
 }

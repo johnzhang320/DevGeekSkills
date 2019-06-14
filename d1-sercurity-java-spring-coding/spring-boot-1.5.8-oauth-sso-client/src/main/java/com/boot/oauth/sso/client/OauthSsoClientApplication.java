@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 @EnableOAuth2Sso
 public class OauthSsoClientApplication  {
 
- //server_port=8084
- //localhost:8084//oauth_sso/demosso
+ //server_port=8085
+ //localhost:8085//oauth_sso/demosso
 
    public static void main(String[] args) {
        SpringApplication.run(OauthSsoClientApplication.class, args);

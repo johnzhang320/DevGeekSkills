@@ -24,24 +24,24 @@ import com.oauth.client.utils.OauthUtils;
 @Controller
 public class GetAuthCodeController {
 	static final String ACCESS_TOKEN_URI[]= {
-			"http://localhost:8080/oauth_server/oauth/token",
-			"http://localhost:8080/oauth_server/oauth/token",
+			"http://localhost:8083/oauth_server/oauth/token",
+			"http://localhost:8083/oauth_server/oauth/token",
 			"https://localhost:8443/oauth/token"
  	};
 	static final String AUTHORIZE_URI[]= {
-			"http://localhost:8080/oauth_server/oauth/authorize",
-			"http://localhost:8080/oauth_server/oauth/authorize",
+			"http://localhost:8083/oauth_server/oauth/authorize",
+			"http://localhost:8083/oauth_server/oauth/authorize",
 			"https://localhost:8443/oauth/authorize"
  	};
 	static final String[] REDIRECT_URI= {
-			"http://localhost:8080/oauth_client/showDashboard.html",
-			"http://localhost:8080/oauth_client/showBankAccount.html",
-			"https://localhost:8080/oauth_client/marshall.html"
+			"http://localhost:8082/oauth_client/showDashboard.html",
+			"http://localhost:8082/oauth_client/showBankAccount.html",
+			"https://localhost:8083/oauth_client/marshall.html"
 	};
 	
 	static final String[] RESOURCE_SERVICE_URI= {
-			"http://localhost:8080/oauth_server/safebox/getDashboardList",
-			"http://localhost:8080/oauth_server/safebox/getBankAccountList",
+			"http://localhost:8083/oauth_server/safebox/getDashboardList",
+			"http://localhost:8083/oauth_server/safebox/getBankAccountList",
 			"https://localhost:8443/marshall/renewone.html"
 	};
 	
