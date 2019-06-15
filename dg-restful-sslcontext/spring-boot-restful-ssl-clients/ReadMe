@@ -1,0 +1,14 @@
+Before Run any restful clients in project spring-boot-restful-ssl-clients without start its spring boot
+you need start other project call:
+
+spring-boot-restful-ssl-server
+
+server.context-path=spring-boot-restful-ssl-server
+server.port=8443
+
+
+Therefore ensure Constants.java in spring-boot-restful-ssl-clients
+ 
+public static final String CONTEXT_PATH="/spring-boot-restful-ssl-server/";
+
+ 
