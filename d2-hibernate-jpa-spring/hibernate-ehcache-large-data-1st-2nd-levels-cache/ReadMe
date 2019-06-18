@@ -1,0 +1,119 @@
+Step 1 
+go to mysql or mariadb
+create database rua_receiverdb
+Step 2
+go to link to get rua_receiverdb.sql or send email to me : john.zhang320@gmail.com
+import by following command
+mysql -u root -p rua_receiverdb <rua_receiverdb.sql
+
+Step 3
+in hibernate.cfg.xml, change your database connection
+
+Step 5 
+
+run 
+LargeDataQueryFirstSecondLevelsCacheTest.java in eclipse 
+
+you will see clear and close session and hit second level cache
+
+ Fetch master report data rows 2000 and detail report rows 133789, print out as following
+ 
+ ***** Test Case 0 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=0
+
+before all end
+Test 1 testCriteriaApplication begin
+
+
+PLEASE WAIT.......
+
+
+2019-06-17 18:27:41,727 INFO  [main] internal.StandardQueryCache (StandardQueryCache.java:90)     HHH000248: Starting query cache at region: dmarcMasterReports
+
+Test 1 testCriteriaApplication end and it took:266 ms
+
+
+***** Test Case 1 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-17 18:27:46,271 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:53)     finish a test case
+2019-06-17 18:27:46,273 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:47)     Start a test case
+Test2 testQuerySameData begin
+
+Test 1 finish testCriteriaApplication, it took:266 ms
+Test 2 finish testQuerySameData, it took 3 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 2 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-17 18:27:46,478 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:53)     finish a test case
+2019-06-17 18:27:46,479 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:47)     Start a test case
+Test 3 testClearCurrenSessionRead2ndLevelCache begin
+Test 3 testClearCurrenSessionRead2ndLevelCache clear all objects in current session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:266 ms
+Test 2 finish testQuerySameData, it took 3 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 31 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 3 *****
+Fetch Count=0
+Second Level Hit Count=2000
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-17 18:27:48,550 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:53)     finish a test case
+2019-06-17 18:27:48,552 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:47)     Start a test case
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache begin
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache close session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:266 ms
+Test 2 finish testQuerySameData, it took 3 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 31 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 18 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 4 *****
+Fetch Count=0
+Second Level Hit Count=4000
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-17 18:27:50,769 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:53)     finish a test case
+2019-06-17 18:27:50,770 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:47)     Start a test case
+Test5 testAddMoreDataToCachedOne (50 master rows) begin
+
+Test 1 finish testCriteriaApplication, it took:266 ms,
+Test 2 finish testQuerySameData, it took:3 ms,
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 31 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 18 ms
+Test 5 finish testAddMoreDataToCachedOne (50 master rows), it took:8 ms,
+Master Report records:2050
+Detail Repost records:133789
+
+***** Test Case 5 *****
+Fetch Count=0
+Second Level Hit Count=4000
+Second Level Miss Count=0
+Second Level Put Count=165977
+
+Step 6 option
+change LargeDataQueryFirstSecondLevelsCacheTest.java
+Log.debug("show DmarcMasterReportss:"+p.toString()); 
+to
+Log.into("show DmarcMasterReportss:"+p.toString()); 
+
+you can see master report displayed (be careful your display memory)
