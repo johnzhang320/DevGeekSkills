@@ -1,0 +1,5 @@
+com/spring/data/cassandra/CassandraConfig.class
+com/spring/data/cassandra/model/Person.class
+com/spring/data/cassandra/SpringDataCassandraApplication.class
+com/spring/data/cassandra/model/PersonKey.class
+com/spring/data/cassandra/repository/PersonRepository.class

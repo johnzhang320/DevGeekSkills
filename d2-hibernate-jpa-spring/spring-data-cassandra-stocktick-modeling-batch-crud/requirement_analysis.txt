@@ -1,0 +1,89 @@
+stock_symbol
+symbol       description         exchange
+AAPL         FB                  NASDAG
+FB           Facebook,Inc        NASDAG
+AMZN		 Amazon,Inc          NASDAG
+ULTA		 Ulta Beauty,Inc     DOW     
+
+
+
+stock_tick
+symbol		tick_date		open		high		low			close		volume
+AAPL		2019-04-24		568.21		570.00		560.73		567.77		27092600	
+FB			2019-04-24		63.60		63.65		58.77		60.87		1327092600	
+AAPL		2019-04-25		564.53		571.00		563.96		567.77		28012600	
+FB			2019-04-25		59.97		60.01		57.57		57.71		91232243
+
+cassandra base tables:
+
+create table stock_symbol
+	symbol			varchar	primary key,
+	description		varchar,
+	exchange		varchar
+);
+
+create table stock_tick
+	symbol			varchar,
+	tick_date		varchar,
+	open			decimal,
+	high			decimal,
+	low				decimal,
+	close			decimal,
+	volume			bigint,
+	primary key(symbol, tick_date)
+);
+
+SQL Query Requirements Analysis:
+
+Query A;
+	Select symbol, description, exchange from stock_symbol;
+	included
+    Rowkey is Symbol
+
+Query B:
+	Select b.symbol, b.description, a.tick_date,a.close
+	from stock_tick a, stock_symbol b
+	where a.symbol = b.symbol
+	and a.exchange = 'NASDAQ'
+	 
+
+Query C:
+	Select b.symbol, b.description, a.tick_date,a.open,
+	a.high,a.low,a.close
+	from stock_tick a, stock_symbol b
+	where a.symbol = b.symbol
+	and a.exchange = 'NASDAQ'
+	and b.tick_date='2014-04-04' 
+
+Convert SQL Query A , B , C to 3 cassandra tables, join columns are cluster key and explicitly parameterized columns are 
+partition key, Query B partition key is 'exchange' which assign nodes by market (S&P500, DOW, NASDAQ) 
+               Query C partition key should be 'exchange and tick_date' composite partition key
+               
+Cassandra Query B should be table stock_tick_by_exchange, which inherited stock_tick primary key as cluster key and add 
+'exchange' as partition key                  
+
+create table stock_tick_by_exchange
+	exchange		varchar,
+	symbol			varchar,
+	description		varchar,
+	tick_date		varchar,
+	close			decimal,
+	primary key(exchange, symbol, tick_date)
+);
+
+
+Cassandra Query C should be table stock_tick_by_exchange_tick_date, which inherited stock_tick primary key as cluster key and add 
+'exchange and tick_date' as composite partition key                  
+
+create table stock_tick_by_exchange_date
+	exchange		varchar,	
+	symbol			varchar,
+	description		varchar,
+	tick_date		varchar,
+ 	open			decimal,
+	high			decimal,
+	low				decimal,
+	close			decimal,
+	volume			bigint,
+	primary key((exchange,tick_date), symbol)
+);
