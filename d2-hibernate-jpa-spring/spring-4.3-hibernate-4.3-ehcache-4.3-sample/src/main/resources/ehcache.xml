@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="java.io.tmpdir/ehcache" />
+
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120"  
+		 
+		memoryStoreEvictionPolicy="LRU" statistics="true">
+		 
+	</defaultCache>
+
+	<cache name="employee" maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="5" timeToLiveSeconds="10">
+		 
+	</cache>
+	
+	<cache name="dmarcMasterReports" maxElementsInMemory="30000" eternal="false"
+		timeToIdleSeconds="5" timeToLiveSeconds="10">
+		 
+	</cache>
+	
+	<cache name="category" maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="5" timeToLiveSeconds="10">
+		 
+	</cache>
+	
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="5" eternal="false" timeToLiveSeconds="120">
+		 
+	</cache>
+
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="true">
+		 
+	</cache>
+</ehcache>

@@ -1,0 +1,206 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hibernate5-abstract-sessionfactory</groupId>
+  <artifactId>hibernate5-abstract-sessionfactory</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>hibernate5-abstract-sessionfactory</name>
+  <description>hibernate5-abstract-sessionfactory</description>
+    <properties>
+ 
+        <!-- Spring -->
+        <org.springframework.version>4.3.2.RELEASE</org.springframework.version>
+       
+
+        <!-- persistence -->
+        <hibernate.version>4.3.5.Final</hibernate.version>
+         
+        <tomcat-dbcp.version>9.0.0.M26</tomcat-dbcp.version>
+        <jta.version>1.1</jta.version>
+        <hsqldb.version>2.3.4</hsqldb.version>
+
+        <!-- util -->
+        <guava.version>21.0</guava.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+    
+        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
+        <junit.platform.version>1.0.0-M4</junit.platform.version>
+        <java.version>1.8</java.version> 
+        <maven.compiler.source>1.8</maven.compiler.source>
+   		<maven.compiler.target>1.8</maven.compiler.target>
+     </properties>
+  
+  <dependencies>
+         <!-- Spring -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- persistence -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+       
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+        <!-- support org.springframework.cache.ehcache.EhCacheCacheManager -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>4.1.0.RELEASE</version>
+		</dependency>
+
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+   <!--        <dependency>
+		    <groupId>net.sf.ehcache</groupId>
+		    <artifactId>ehcache-core</artifactId>
+		    <version>2.6.5</version>
+		</dependency> -->
+	
+	  	<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>4.3.4.Final</version>
+		</dependency> 
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>${jta.version}</version>
+        </dependency>
+	  
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>${tomcat-dbcp.version}</version>
+        </dependency>
+
+        <!-- validation -->
+
+        <!-- utils -->
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- test scoped -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		    <scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+       
+    <!--Customized-->
+	 <dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.16</version>
+	</dependency>     
+     <dependency>
+	    <groupId>org.mariadb.jdbc</groupId>
+	    <artifactId>mariadb-java-client</artifactId>
+	    <version>2.1.0</version>
+	</dependency>
+	  <!-- C3p0 Connection pool -->
+    <dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-c3p0</artifactId>
+	    <version>5.3.6.Final</version>
+	</dependency>
+	
+     <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>19.0</version>
+     </dependency>
+	<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	 
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.5</version>
+	</dependency> 
+	
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-test</artifactId>
+       <version>${org.springframework.version}</version>
+       <scope>test</scope>
+       <exclusions>
+           <exclusion>
+               <groupId>junit</groupId>
+               <artifactId>junit</artifactId>
+           </exclusion>
+       </exclusions>
+   </dependency>
+   </dependencies>
+     <build>
+        <finalName>hibernate5-abstract-sessionfactory</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12.4</version>
+        <configuration>
+
+          <skipTests>true</skipTests>   <!-- mvn install with Skipping Stupid Test !!!! -->
+        </configuration>
+      </plugin>
+    </plugins>
+    </build>
+   
+</project>

@@ -16,8 +16,11 @@ LargeDataQueryFirstSecondLevelsCacheTest.java in eclipse
 
 you will see clear and close session and hit second level cache
 
- Fetch master report data rows 2000 and detail report rows 133789, print out as following
- 
+Fetch master report data rows 2000 and detail report rows 133789, print out as following
+
+***************************If we do not open transaction, keep session and apply usage =  CacheConcurrencyStrategy.NONRESTRICT_READ_WRITE or READ_ONLY****************************************
+***************************we get first level cache if not clear or close session, otherwise if we clear and close session and use new session, code hit second level cache ******************
+
  ***** Test Case 0 *****
 Fetch Count=0
 Second Level Hit Count=0
@@ -117,3 +120,178 @@ to
 Log.into("show DmarcMasterReportss:"+p.toString()); 
 
 you can see master report displayed (be careful your display memory)
+
+***************************If we open transaction and apply usage =  CacheConcurrencyStrategy.READ_WRITE****************************************
+***************************we did not hit first level cache and second level cache at all even keep same session  ******************************
+
+before all end
+Test 1 testCriteriaApplication begin
+
+
+PLEASE WAIT.......
+
+
+2019-06-18 11:46:54,072 INFO  [main] internal.StandardQueryCache (StandardQueryCache.java:90)     HHH000248: Starting query cache at region: dmarcMasterReports
+
+Test 1 testCriteriaApplication end and it took:288 ms
+
+
+***** Test Case 1 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-18 11:46:59,585 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 11:46:59,588 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test2 testQuerySameData begin
+
+Test 1 finish testCriteriaApplication, it took:288 ms
+Test 2 finish testQuerySameData, it took 171 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 2 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-18 11:47:00,181 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 11:47:00,182 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test 3 testClearCurrenSessionRead2ndLevelCache begin
+Test 3 testClearCurrenSessionRead2ndLevelCache clear all objects in current session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:288 ms
+Test 2 finish testQuerySameData, it took 171 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 505 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 3 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=325674
+
+2019-06-18 11:47:15,929 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 11:47:15,930 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache begin
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache close session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:288 ms
+Test 2 finish testQuerySameData, it took 171 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 505 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 242 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 4 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=488511
+
+2019-06-18 11:47:29,872 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test5 testAddMoreDataToCachedOne (50 master rows) begin
+
+Test 1 finish testCriteriaApplication, it took:288 ms,
+Test 2 finish testQuerySameData, it took:171 ms,
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 505 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 242 ms
+Test 5 finish testAddMoreDataToCachedOne (50 master rows), it took:164 ms,
+Master Report records:2050
+Detail Repost records:133789
+
+***** Test Case 5 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=491651
+
+***************************If we did not open transaction and apply usage =  CacheConcurrencyStrategy.READ_WRITE****************************************
+***************************if keep same session , we can hit first level cache and do not hit second level cache  **************************************
+Test 1 testCriteriaApplication begin
+
+
+PLEASE WAIT.......
+
+
+2019-06-18 12:00:23,481 INFO  [main] internal.StandardQueryCache (StandardQueryCache.java:90)     HHH000248: Starting query cache at region: dmarcMasterReports
+
+Test 1 testCriteriaApplication end and it took:265 ms
+
+
+***** Test Case 1 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-18 12:00:28,281 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 12:00:28,283 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test2 testQuerySameData begin
+
+Test 1 finish testCriteriaApplication, it took:265 ms
+Test 2 finish testQuerySameData, it took 4 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 2 *****
+Fetch Count=0
+Second Level Hit Count=0
+Second Level Miss Count=0
+Second Level Put Count=162837
+
+2019-06-18 12:00:28,498 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 12:00:28,500 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test 3 testClearCurrenSessionRead2ndLevelCache begin
+Test 3 testClearCurrenSessionRead2ndLevelCache clear all objects in current session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:265 ms
+Test 2 finish testQuerySameData, it took 4 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 529 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 3 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=325262
+
+2019-06-18 12:00:42,595 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 12:00:42,596 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache begin
+Test 4 testCloseSessionOpenNewOneRead2ndLevelCache close session to enforce read second level cache
+
+Test 1 finish testCriteriaApplication, it took:265 ms
+Test 2 finish testQuerySameData, it took 4 ms
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 529 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 337 ms
+Master Report records:2000
+Detail Repost records:131057
+
+***** Test Case 4 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=488099
+
+2019-06-18 12:00:56,714 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:68)     finish a test case
+2019-06-18 12:00:56,715 INFO  [main] service.BaseCacheTestDAO (BaseCacheTestDAO.java:62)     Start a test case
+Test5 testAddMoreDataToCachedOne (50 master rows) begin
+
+Test 1 finish testCriteriaApplication, it took:265 ms,
+Test 2 finish testQuerySameData, it took:4 ms,
+Test 3 finish testClearCurrenSessionRead2ndLevelCache, it took 529 ms
+Test 4 finish testCloseSessionOpenNewOneRead2ndLevelCache, it took 337 ms
+Test 5 finish testAddMoreDataToCachedOne (50 master rows), it took:7 ms,
+Master Report records:2050
+Detail Repost records:133789
+
+***** Test Case 5 *****
+Fetch Count=2000
+Second Level Hit Count=0
+Second Level Miss Count=2000
+Second Level Put Count=491239
