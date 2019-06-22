@@ -36,6 +36,9 @@ Improvement points
     in UI (front end) side and my provider uses private key decrypt it and hash it to compare database hash, validation is OK then
     login only server. 
     
+    If legacy system already used the brypt and base64 encode password, using front end encryption solution also blocks the 
+    security hole for password
+    
     
       
     
