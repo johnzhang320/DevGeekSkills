@@ -1,0 +1,48 @@
+This project is the enhancement of Spring or Spring boot security
+
+Improvement points
+
+1. Database supported user and role registration and administration
+   Using node.js and jSP to create UI to support registration
+   administration is allowed only user with 'Admin' role to access
+   allow admin type and find user, list their role , checkbox to select 
+   and define user's role
+   user and role is many to many relationship supported by Spring JPA
+   
+ 2. Custom Authentication Database Provider as bean which return UsernamePasswordAuthenticationToken
+    @Autowired this bean in user class of WebSecurityConfigurerAdapter , configure AuthenticationManagerBuilder
+    by this bean
+ 
+ 3. Spring Security UserDetail service always apply brypt library to hash and comparing password
+    because hash same password twice, brypt produce different hash result, we must reply on
+    brypt comparing method like    
+    
+    bcrypt.compare(myPlaintextPassword, hash, function(err, res) or bcrypt.checkpw(passwd, hashed_passwd)
+    
+    
+    here we must provide plaintext password in server side and server read database hash then compare both of them
+    
+    This is far away perfect, for security reason at UI side, we often need to hash password not only encoded by base 64 encoder  
+    
+    In other word , we need two password hash values directly comparing and saving.
+    
+    Because Spring Security recommends use Brypt library , its UserDetail sample code only check username and not check password
+    
+    my provider checks both and allow user hash password in UI
+    
+    Therefore , in my Custom Authentication Database Provider, I use my own SHA256 manager to do it
+    
+  4. For some reason, our web server need password login other resource server, my application use public key encrypts password
+    in UI (front end) side and my provider uses private key decrypt it and hash it to compare database hash, validation is OK then
+    login only server. 
+    
+    
+      
+    
+     
+    
+    
+   
+    
+
+
