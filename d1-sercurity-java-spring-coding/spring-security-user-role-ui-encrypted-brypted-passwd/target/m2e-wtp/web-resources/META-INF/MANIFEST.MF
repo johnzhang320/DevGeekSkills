@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-security-user-role-ui-encrypted-brypted-p
+ asswd
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: jianzhang
+Implementation-Vendor-Id: spring-security-user-role-ui-encrypted-brypt
+ ed-passwd
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-security-user-role-ui-encrypted-brypted-pass
+ wd
+Created-By: Maven Integration for Eclipse
+
