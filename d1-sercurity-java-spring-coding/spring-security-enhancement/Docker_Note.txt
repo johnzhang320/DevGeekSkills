@@ -1,0 +1,29 @@
+1 create mysql docker container
+
+docker run -d -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=netgloo_blog -p 3306:3306 -name mysql_mac mysql:latest
+
+docker ps
+
+docker exec -it mysql_mac bash
+
+root@507ec0bee824/# mysql -u root -p
+
+exit
+
+docker-machine ip default
+
+192.168.99.100
+
+local host docker which contain mysql
+
+change 
+application.properties
+
+spring.datasource.url=jdbc:mysql://192.168.99.100:3306/netgloo_blog
+
+spring.datasource.username=root
+spring.datasource.password=root
+
+docker stop mysql_mac   -- stop mysql
+
+docker rmi mysql -- remove image

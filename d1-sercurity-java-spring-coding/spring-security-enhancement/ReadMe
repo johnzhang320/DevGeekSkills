@@ -1,0 +1,33 @@
+This project is the enhancement of Spring or Spring boot security
+1. Password Security Enhancement
+   We added Front End Password Encryption to obtain following security benefit and protect password leaking from:
+   1.1 Login Client Machine attacked my Troy or X-Agent
+   1.2 HTTP connection without HTTPS (SSL/TLS) protecting
+   1.3 Spring  BCryptPasswordEncoder Match (password_PlainText, Hashed_Password) runing in Sever side, which means
+       we could not hash password by Javascript in front end login page. Front End 
+       
+   
+   BCryptPasswordEncoder() generates different hashed value if hashing same plaintext twice.
+   we have to use compare method in this library to comparing plaintext with db saved hash value
+   maybe this consideration is protect password database partially leak, but checking plaintext
+   password in server side, which means we can not hash password in UI side and database always 
+   save first time hashed password, this way even database leaked and no way get plaintext password
+   Seems that is good for prevent for hacker to use hashed password to attach applications
+   
+   but this solution is not perfect, which will leave greater vulnerable hole for password to be attacked 
+   when plaintext password be transfered or attacked by local client virus like X-Agent
+   
+   Solution 1 : I create Sha256Encoder hashed password to be saved in database, keep hash value is same all the time
+                as my project spring-security-by-db-user-role-ui-encrypted-password does 
+                
+   Solution 2:  solution 1 can not prevent from hashed password double attack if it leaked and not suitable for existing
+                system which already use BCryptPasswordEncoder.
+                This solution use BCryptPasswordEncoder and UI side , we use front end password to prevent the password from
+                leaked while it could be attacked in local or network              
+      
+   In other word ,once password input is finished, we never leave password in plaintext status either even before submit login 
+   page or over network 
+   
+   Solution 2: 
+   
+   database name is bryptdb

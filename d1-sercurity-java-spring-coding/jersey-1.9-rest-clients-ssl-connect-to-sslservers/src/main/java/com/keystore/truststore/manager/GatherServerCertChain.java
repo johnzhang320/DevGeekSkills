@@ -215,9 +215,7 @@ public class GatherServerCertChain {
 					Log.info("Succeed Converting CER to PEM");
 				} 
 					
-				//keytool -delete -alias 'Test Apple Corporate Root CA' -keystore truststore.jks -storepass abc1234 -keypass abc1234
-				//keytool -import -v -trustcacerts -alias 'Test Apple Corporate Root CA' -file localhost.apple.com.issuer.pem -keystore truststore.jks -storepass abc1234 -keypass abc1234
-			
+ 			
 				command = " -genkey -keyalg RSA -alias "+ aliasName+
 						  " -keystore "+ fullPathJks+
 				          " -dname CN=unknown "+

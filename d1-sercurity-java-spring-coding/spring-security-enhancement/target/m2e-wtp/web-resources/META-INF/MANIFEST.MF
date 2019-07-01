@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-security-enhancement
+Implementation-Version: 1.0.0
+Built-By: jianzhang
+Implementation-Vendor-Id: spring-security-enhancement
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-security-enhancement
+Created-By: Maven Integration for Eclipse
+

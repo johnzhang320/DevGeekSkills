@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: boot-resource-server
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: jianzhang
+Implementation-Vendor-Id: Spring-boot-1.5.8-oauth-password-flow-server
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://projects.spring.io/spring-boot/Spring-boot-
+ 1.5.8-oauth-password-flow-server/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.boot.oauth.server.OauthServerApplication
+

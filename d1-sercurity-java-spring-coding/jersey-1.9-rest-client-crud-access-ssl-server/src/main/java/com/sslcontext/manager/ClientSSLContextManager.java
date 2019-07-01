@@ -35,6 +35,7 @@ public class ClientSSLContextManager {
 		this.trustPassword=trustPassword;  
 		this.keyStorePath = keyStorePath;
 		this.keyPassword = keyPassword;
+		
 		SSLContextManager handler = new SSLContextManager(trustStorePath,trustPassword,keyStorePath,keyPassword);
 		sslContext = handler.getSSLContext();
 	}
