@@ -1,0 +1,3 @@
+com/gather/google/facebook/truststore/cert/chain/test/TestGatherGoogleTruststore.class
+com/gather/google/facebook/truststore/cert/chain/test/TestGatherFacebookTruststore.class
+com/gather/localhost/truststore/cert/chain/test/TestGatherLocalHostCertTruststore.class

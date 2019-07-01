@@ -1,4 +1,3 @@
-/Users/jianzhang/JZWorkspace/RefinedDev/keystore-sslcontext-managers-for-sslconnection/src/test/java/com/gather/google/facebook/truststore/cert/chain/test/TestGatherFaceBookTruststore.java
-/Users/jianzhang/JZWorkspace/RefinedDev/keystore-sslcontext-managers-for-sslconnection/src/test/java/com/gather/google/facebook/truststore/cert/chain/test/TestGatherGoogleTruststore.java
-/Users/jianzhang/JZWorkspace/RefinedDev/keystore-sslcontext-managers-for-sslconnection/src/test/java/com/sun/security/tools/keytool/test/TestDoKeytool.java
-/Users/jianzhang/JZWorkspace/RefinedDev/keystore-sslcontext-managers-for-sslconnection/src/test/java/com/set/sslconnection/to/google/facebook/by/truststore/TestSSLConnectToFaceBookByGatheredTruststore.java
+/Users/jianzhang/JZWorkspace/RefinedDev/gather-any-ssl-server-certificate-create-trustsore/src/test/java/com/gather/google/facebook/truststore/cert/chain/test/TestGatherGoogleTruststore.java
+/Users/jianzhang/JZWorkspace/RefinedDev/gather-any-ssl-server-certificate-create-trustsore/src/test/java/com/gather/localhost/truststore/cert/chain/test/TestGatherLocalHostCertTruststore.java
+/Users/jianzhang/JZWorkspace/RefinedDev/gather-any-ssl-server-certificate-create-trustsore/src/test/java/com/gather/google/facebook/truststore/cert/chain/test/TestGatherFacebookTruststore.java
